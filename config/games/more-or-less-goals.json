@@ -1,0 +1,93 @@
+{
+  "gameType": "more-or-less-goals",
+  "engine": "moreOrLess",
+  "logic": "moreOrLess",
+  "entityType": "players",
+  "active": true,
+
+  "content": {
+    "enabled": true,
+    "source": "generated",
+    "scopes": ["competition", "global"]
+  },
+
+  "datasets": ["players"],
+
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrareloj",
+      "type": "time",
+      "baseValue": 60,
+      "variants": [],
+      "enabled": true
+    },
+    {
+      "key": "normal",
+      "label": "Normal",
+      "type": "custom",
+      "baseValue": null,
+      "variants": [],
+      "enabled": true
+    }
+  ],
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": false,
+    "useScore": true,
+    "trackStats": true
+  },
+  "presentation": {
+    "title": "Más o Menos Goles",
+    "subtitle": "Adivina quién tiene más goles",
+    "description": "abc",
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "ArrowUpDown",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "image",
+          "value": "/images/pelota.png",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+  "objective": "Adivina si el jugador tiene más o menos goles que el anterior",
+  "rules": {
+    "time": [
+      "Compara los goles de cada jugador",
+      "Un error y termina el juego",
+      "Acumula puntos por cada acierto",
+      "Gana muchos puntos antes de que acabe el tiempo"
+    ],
+    "normal": [
+      "Compara los goles de cada jugador",
+      "Un error y termina el juego",
+      "Acumula puntos por cada acierto"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Más o Menos Goles",
+    "steps": [
+      "Se mostrará un jugador junto a su cantidad de goles.",
+      "Luego aparecerá otro jugador ocultando su estadística.",
+      "Debes decidir si tiene más o menos goles que el anterior.",
+      "Cada respuesta correcta suma un punto.",
+      "Un error termina la partida.",
+      "Intenta conseguir la mayor racha posible."
+    ]
+  }
+}

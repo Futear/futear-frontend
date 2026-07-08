@@ -1,0 +1,65 @@
+{
+  "id": "picture",
+  "gameType": "picture",
+
+  "engine": "guess",
+  "logic": "guess",
+
+  "entityType": "picture",
+
+  "active": true,
+  "needsContent": true,
+
+  "modes": [
+    {
+      "key": "attempts",
+      "label": "Intentos",
+      "type": "attempts",
+      "baseValue": 5,
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Imagen histórica",
+    "subtitle": "¿Qué momento es?",
+    "description": "Adivina el momento histórico",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "Image",
+          "className": "w-24 h-24",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Adivina el momento de la imagen",
+
+  "rules": {
+    "attempts": [
+      "Observa la imagen",
+      "Escribe qué momento representa",
+      "Tienes 5 intentos"
+    ]
+  },
+
+  "config": {
+    "maxAttempts": 5
+  }
+}

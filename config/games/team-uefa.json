@@ -1,0 +1,119 @@
+{
+  "gameType": "team-uefa",
+  "engine": "teamBuilder",
+  "logic": "teamBuilder",
+  "entityType": "team",
+  "active": true,
+
+  "content": {
+    "enabled": true,
+    "source": "generated",
+    "scopes": ["global"]
+  },
+
+  "datasets": [],
+
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrarreloj",
+      "type": "time",
+      "baseValue": 60,
+      "variants": [
+        {
+          "label": "Fácil",
+          "value": 90
+        },
+        {
+          "label": "Normal",
+          "value": 60
+        },
+        {
+          "label": "Difícil",
+          "value": 40
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "variants": [
+        {
+          "label": "Clásico",
+          "value": 3
+        },
+        {
+          "label": "Hardcore",
+          "value": 1
+        }
+      ],
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": true,
+    "useStreak": true,
+    "useScore": true,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Equipo de la UEFA",
+    "subtitle": "Arma el XI con jugadores en clubes europeos",
+    "description": "Completa el equipo con jugadores que actualmente juegan en clubes de la UEFA.",
+
+    "visual": {
+      "layout": "row",
+      "layers": [
+        {
+          "type": "image",
+          "value": "/images/formacion.png",
+          "className": "w-28 h-28",
+          "filter": "secondary"
+        },
+        {
+          "type": "image",
+          "value": "/images/confederations/uefa.png",
+          "className": "w-20 h-20",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Arma tu equipo con jugadores que actualmente juegan en los clubes de la UEFA mostrados en cada posición",
+
+  "rules": {
+    "time": [
+      "El jugador debe jugar actualmente en el club mostrado",
+      "El club siempre pertenece a UEFA",
+      "Sin repetir jugadores ni clubes",
+      "Completa el equipo antes de que acabe el tiempo"
+    ],
+    "lives": [
+      "El jugador debe jugar actualmente en el club mostrado",
+      "El club siempre pertenece a UEFA",
+      "Sin repetir jugadores ni clubes",
+      "Pierdes si te quedas sin vidas"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Equipo UEFA",
+    "steps": [
+      "Debes completar las once posiciones del equipo.",
+      "Cada posición muestra un club perteneciente a la UEFA.",
+      "Ingresa un jugador que actualmente juegue en ese club.",
+      "No puedes repetir jugadores.",
+      "Completa toda la formación correctamente.",
+      "Gana antes de que termine el tiempo o se agoten tus vidas."
+    ]
+  }
+}

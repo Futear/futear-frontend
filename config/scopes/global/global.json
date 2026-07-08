@@ -1,0 +1,74 @@
+{
+  "name": "Futear",
+  "slug": "global",
+  "context": "global",
+  "enabled": true,
+  "visibility": "public",
+  "identity": {
+    "fanBase": "Futbol",
+    "nickname": "Futear",
+    "slogan": ""
+  },
+  "branding": {
+    "logo": "/images/scopes/global/logo.webp",
+    "shield": "/images/scopes/global/logo.webp",
+    "icons": {
+      "favicon": "/images/scopes/global/favicon.ico",
+      "favicon16": "/images/scopes/global/favicon-16x16.png",
+      "favicon32": "/images/scopes/global/favicon-32x32.png",
+      "apple": "/images/scopes/global/apple-touch-icon.png",
+      "icon192": "/images/scopes/global/android-chrome-192x192.png",
+      "icon512": "/images/scopes/global/android-chrome-512x512.png",
+      "manifest": "/images/scopes/global/site.webmanifest"
+    }
+  },
+  "scheduler": {
+    "events": [
+      {
+        "gameType": "mundial",
+        "order": 1
+      }
+    ],
+    "fixedGames": [
+      {
+        "gameType": "wordle-club",
+        "order": 2
+      },
+      {
+        "gameType": "wordle-player",
+        "order": 3
+      },
+      {
+        "gameType": "team-elite",
+        "order": 4
+      },
+      {
+        "gameType": "team-conmebol",
+        "order": 5
+      },
+      {
+        "gameType": "team-uefa",
+        "order": 6
+      },
+      {
+        "gameType": "shirt",
+        "order": 9
+      },
+      {
+        "gameType": "more-or-less-goals",
+        "order": 10
+      },
+      {
+        "gameType": "more-or-less-matches",
+        "order": 11
+      }
+    ],
+    "rotating": {
+      "enabled": true,
+      "poolId": "clubs",
+      "gamesPerDay": 1,
+      "startDate": "",
+      "excludedDays": []
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "gameType": "grid-leagues",
+  "engine": "grid",
+  "logic": "grid",
+  "entityType": "competitions",
+  "active": true,
+  "needsContent": false,
+  "datasets": ["players"],
+
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrarreloj",
+      "type": "time",
+      "baseValue": 90,
+      "variants": [],
+      "enabled": true
+    },
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "variants": [],
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Grid de Ligas",
+    "subtitle": "Conecta jugadores entre ligas",
+    "description": "Completa el grid con jugadores que hayan jugado en ambas ligas.",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "Grid3X3",
+          "className": "w-20 h-20",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "icon",
+          "value": "Medal",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Completa todas las celdas con jugadores que hayan jugado en ambas ligas",
+  "rules": {
+    "time": [
+      "El jugador debe haber jugado en ambas ligas",
+      "No puedes repetir jugadores",
+      "Completa el grid antes de que acabe el tiempo"
+    ],
+    "lives": [
+      "El jugador debe haber jugado en ambas ligas",
+      "No puedes repetir jugadores",
+      "Pierdes si te quedas sin vidas"
+    ]
+  }
+}

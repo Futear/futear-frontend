@@ -1,0 +1,91 @@
+{
+  "gameType": "team-worldcup-clubs",
+  "engine": "teamBuilder",
+  "logic": "teamBuilder",
+  "entityType": "team",
+  "active": true,
+
+  "content": {
+    "enabled": true,
+    "source": "generated",
+    "scopes": ["competition"]
+  },
+
+  "datasets": [],
+
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrarreloj",
+      "type": "time",
+      "baseValue": 60,
+      "variants": [
+        {
+          "label": "Fácil",
+          "value": 90
+        },
+        {
+          "label": "Normal",
+          "value": 60
+        },
+        {
+          "label": "Difícil",
+          "value": 40
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "variants": [
+        {
+          "label": "Clásico",
+          "value": 3
+        },
+        {
+          "label": "Hardcore",
+          "value": 1
+        }
+      ],
+      "enabled": true
+    }
+  ],
+
+  "presentation": {
+    "title": "Clubes Mundialistas",
+    "subtitle": "Arma el XI con jugadores del Mundial",
+    "description": "Completa el equipo utilizando jugadores que participan en el Mundial actual y juegan en los clubes mostrados.",
+    "visual": {
+      "layout": "row",
+      "layers": [
+        {
+          "type": "image",
+          "value": "/images/formacion.png",
+          "className": "w-28 h-28",
+          "filter": "secondary"
+        },
+        {
+          "type": "icon",
+          "value": "Medal",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Clubes Mundialistas",
+    "steps": [
+      "Debes completar un XI usando jugadores que juegan el mundial 2026.",
+      "No puedes repetir jugadores.",
+      "Debes respetar posiciones y formación.",
+      "El sistema valida automáticamente si el equipo es correcto.",
+      "Completa antes de que termine el tiempo o pierdas vidas."
+    ]
+  }
+}

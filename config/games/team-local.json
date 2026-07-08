@@ -1,0 +1,90 @@
+{
+  "gameType": "team-local",
+  "engine": "teamBuilder",
+  "logic": "teamBuilder",
+  "entityType": "team",
+  "active": true,
+  "needsContent": false,
+  "datasets": ["players", "coaches"],
+
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrarreloj",
+      "type": "time",
+      "baseValue": 60,
+      "variants": [],
+      "enabled": true
+    },
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "variants": [],
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Equipo Local",
+    "subtitle": "Arma el XI por selección",
+    "description": "Completa el equipo con jugadores que pasaron por San Lorenzo y jugaron en la selección indicada.",
+    "visual": {
+      "layout": "row",
+      "layers": [
+        {
+          "type": "image",
+          "value": "/images/formacion.png",
+          "className": "w-28 h-28",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "scope-federation",
+          "className": "w-20 h-20",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Arma tu equipo con jugadores que pasaron por San Lorenzo y jugaron en la selección indicada",
+
+  "rules": {
+    "time": [
+      "Jugaron en San Lorenzo",
+      "Jugaron en la selección mostrada",
+      "Sin repetir jugadores/selecciones",
+      "Completa el equipo antes de que acabe el tiempo"
+    ],
+    "lives": [
+      "Jugaron en San Lorenzo",
+      "Jugaron en la selección mostrada",
+      "Sin repetir jugadores/selecciones",
+      "Pierdes si te quedas sin vidas"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Equipo Local",
+    "steps": [
+      "Cada posición mostrará una selección nacional.",
+      "Debes ingresar un jugador que haya pasado por San Lorenzo y representado a esa selección.",
+      "No puedes repetir futbolistas.",
+      "Cada respuesta es validada automáticamente.",
+      "Completa todas las posiciones disponibles.",
+      "Gana antes de que se agote el tiempo o tus vidas."
+    ]
+  }
+}

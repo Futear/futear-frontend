@@ -1,0 +1,62 @@
+{
+  "gameType": "history",
+  "active": true,
+  "needsContent": true,
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrareloj",
+      "type": "time",
+      "baseValue": 30,
+      "variants": [],
+      "enabled": true
+    },
+    {
+      "key": "life",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "variants": [],
+      "enabled": true
+    }
+  ],
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+  "presentation": {
+    "title": "Historia",
+    "subtitle": "Preguntas sobre la historia del futbol",
+    "description": "abc",
+    "icon": "BookOpen",
+    "images": []
+  },
+  "objective": "Responde correctamente sobre la historia del club",
+  "rules": {
+    "time": [
+      "Selecciona la opción que creas correcta",
+      "Complétalo antes de que acabe el tiempo"
+    ],
+    "life": [
+      "Selecciona la opción que creas correcta",
+      "Complétalo sin perder todas las vidas"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Historia",
+    "steps": [
+      "Se mostrará una pregunta relacionada con la historia del fútbol.",
+      "Lee atentamente las opciones disponibles.",
+      "Selecciona la respuesta que consideres correcta.",
+      "Cada acierto te acerca a completar el desafío.",
+      "En modo Vidas perderás una vida por cada error.",
+      "En modo Contrarreloj deberás responder antes de que termine el tiempo."
+    ]
+  }
+}

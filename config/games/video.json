@@ -1,0 +1,65 @@
+{
+  "id": "video",
+  "gameType": "video",
+
+  "engine": "guess",
+  "logic": "guess",
+
+  "entityType": "video",
+
+  "active": true,
+  "needsContent": true,
+
+  "modes": [
+    {
+      "key": "normal",
+      "label": "Normal",
+      "type": "attempts",
+      "baseValue": 1,
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Video",
+    "subtitle": "¿Cómo termina la jugada?",
+    "description": "Mira el clip y adivina el final",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "TvMinimalPlay",
+          "className": "w-24 h-24",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Adivina cómo termina la jugada",
+
+  "rules": {
+    "normal": [
+      "Observa el clip",
+      "Adivina el desenlace",
+      "Solo tienes un intento"
+    ]
+  },
+
+  "config": {
+    "maxAttempts": 1
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "gameType": "more-or-less-matches",
+  "engine": "moreOrLess",
+  "logic": "moreOrLess",
+  "entityType": "players",
+  "active": true,
+
+  "content": {
+    "enabled": true,
+    "source": "generated",
+    "scopes": ["competition", "global"]
+  },
+
+  "datasets": ["players"],
+
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrareloj",
+      "type": "time",
+      "baseValue": 60,
+      "enabled": true,
+      "variants": []
+    },
+    {
+      "key": "normal",
+      "label": "Normal",
+      "type": "custom",
+      "baseValue": null,
+      "enabled": true,
+      "variants": []
+    }
+  ],
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": false,
+    "useScore": true,
+    "trackStats": true
+  },
+  "presentation": {
+    "title": "Más o Menos Partidos",
+    "subtitle": "¿Tiene más o menos partidos?",
+    "description": "",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "ArrowUpDown",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "icon",
+          "value": "Shirt",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Adivina si el jugador tiene más o menos partidos que el anterior",
+
+  "rules": {
+    "time": [
+      "Compara las presencias",
+      "Un error termina el juego",
+      "Gana puntos antes de que acabe el tiempo"
+    ],
+
+    "normal": [
+      "Compara las presencias",
+      "Un error termina el juego",
+      "Acumula puntos"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Más o Menos Partidos",
+    "steps": [
+      "Se mostrará un jugador junto a su cantidad de partidos.",
+      "Después aparecerá un segundo jugador.",
+      "Debes indicar si jugó más o menos partidos que el anterior.",
+      "Cada acierto aumenta tu puntuación.",
+      "Un error finaliza la partida.",
+      "Supera tu mejor marca acumulando respuestas correctas."
+    ]
+  }
+}

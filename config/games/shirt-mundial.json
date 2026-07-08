@@ -1,0 +1,106 @@
+{
+  "id": "shirt-mundial",
+  "gameType": "shirt-mundial",
+
+  "engine": "shirt",
+  "logic": "shirt",
+
+  "entityType": "shirt",
+
+  "active": true,
+
+  "content": {
+    "enabled": true,
+    "source": "manual",
+    "scopes": []
+  },
+
+  "datasets": [],
+
+  "modes": [
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "enabled": true
+    },
+
+    {
+      "key": "time",
+      "label": "Tiempo",
+      "type": "time",
+      "baseValue": 60,
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Camiseta Mundialista",
+    "subtitle": "Adivina la camiseta",
+    "description": "Descubre la selección, marca y Mundial",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "Shirt",
+          "className": "w-24 h-24",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "icon",
+          "value": "Trophy",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Adivina la camiseta mundialista usando pistas visuales",
+
+  "rules": {
+    "lives": [
+      "Observa los detalles de la camiseta",
+      "Cada error consume una vida",
+      "Descubre la selección y el Mundial"
+    ],
+
+    "time": [
+      "Observa las pistas visuales",
+      "Responde antes que termine el tiempo",
+      "Completa todos los pasos"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Camiseta Mundialista",
+    "steps": [
+      "Se mostrará una camiseta utilizada en una Copa del Mundo.",
+      "Observa colores, escudo, diseño y detalles.",
+      "Debes identificar la selección y el Mundial correspondiente.",
+      "Cada error revelará nuevas pistas.",
+      "Dispones de vidas o tiempo según el modo elegido.",
+      "Adivina antes de quedarte sin oportunidades."
+    ]
+  },
+
+  "config": {
+    "maxLives": 3,
+    "timeLimit": 180
+  }
+}

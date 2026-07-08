@@ -1,0 +1,45 @@
+{
+  "gameType": "connections",
+  "active": true,
+
+  "content": {
+    "enabled": true,
+    "source": "manual",
+    "scopes": []
+  },
+  "modes": [
+    {
+      "key": "life",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 5,
+      "variants": [],
+      "enabled": true
+    }
+  ],
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+  "presentation": {
+    "title": "Conexiones",
+    "subtitle": "Encontrá qué tienen en común",
+    "description": "Agrupá correctamente a los jugadores según su conexión",
+    "icon": "Grip",
+    "images": []
+  },
+  "objective": "Descubre las conexiones ocultas entre los jugadores y completa los cuatro grupos.",
+  "rules": {
+    "life": [
+      "Hay 12 jugadores divididos en 4 grupos de 4",
+      "Cada grupo comparte una característica en común",
+      "Solo un agrupamiento es correcto",
+      "Completá los cuatro grupos para ganar"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "wordle-club",
+  "gameType": "wordle-club",
+  "engine": "wordle",
+  "logic": "wordle",
+
+  "entityType": "club",
+  "active": true,
+  "content": {
+    "enabled": true,
+    "source": "manual",
+    "scopes": []
+  },
+
+  "modes": [
+    {
+      "key": "attempts",
+      "label": "Normal",
+      "type": "attempts",
+      "baseValue": 6,
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Club del día",
+    "subtitle": "Adivina el club",
+    "description": "Descubre el club oculto en 6 intentos",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "Keyboard",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "icon",
+          "value": "Shield",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Adivina el club oculto",
+
+  "rules": {
+    "attempts": [
+      "Tienes 6 intentos máximo",
+      "Verde: letra correcta en posición correcta",
+      "Amarillo: letra correcta en posición incorrecta",
+      "Gris: letra no está en el nombre"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Club del Día",
+    "steps": [
+      "Debes adivinar el club oculto.",
+      "Tienes un máximo de 6 intentos.",
+      "Las letras verdes están en la posición correcta.",
+      "Las letras amarillas existen pero están en otra posición.",
+      "Las letras grises no forman parte de la respuesta.",
+      "Utiliza la información de cada intento para encontrar el club."
+    ]
+  }
+}

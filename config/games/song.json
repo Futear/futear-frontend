@@ -1,0 +1,52 @@
+{
+  "gameType": "song",
+  "active": true,
+  "needsContent": true,
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrareloj",
+      "type": "time",
+      "baseValue": 60,
+      "enabled": true,
+      "variants": []
+    },
+    {
+      "key": "life",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "enabled": true,
+      "variants": []
+    }
+  ],
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+  "presentation": {
+    "title": "Canción del día",
+    "subtitle": "Adivina la canción",
+    "description": "",
+    "icon": "Music",
+    "images": []
+  },
+  "objective": "Adivina la canción y sus detalles originales",
+  "rules": {
+    "time": [
+      "Escucha el fragmento",
+      "Identifica la canción",
+      "Responde antes de que termine el tiempo"
+    ],
+    "life": [
+      "Escucha el fragmento",
+      "Identifica la canción",
+      "No pierdas todas las vidas"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "gameType": "top",
+
+  "engine": "top",
+
+  "logic": "top",
+
+  "entityType": "ranking",
+
+  "active": true,
+
+  "content": {
+    "enabled": true,
+    "source": "manual",
+    "scopes": []
+  },
+
+  "datasets": [],
+
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrarreloj",
+      "type": "time",
+      "baseValue": 120,
+      "enabled": true
+    },
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 5,
+      "enabled": true
+    }
+  ],
+
+  "presentation": {
+    "title": "Top 10",
+    "subtitle": "Adivina el ranking",
+    "description": "Descubre las entidades del ranking usando las pistas.",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "ListOrdered",
+          "className": "w-20 h-20",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "icon",
+          "value": "Crown",
+          "className": "w-20 h-20",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Adivina todas las entidades del ranking antes de quedarte sin tiempo o vidas.",
+
+  "rules": {
+    "time": [
+      "Adivina todas las posiciones del ranking",
+      "Las pistas dependen del tipo de top",
+      "Tienes tiempo limitado"
+    ],
+
+    "lives": [
+      "Cada error consume una vida",
+      "Completa el ranking antes de perder todas tus vidas"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Top 10",
+    "steps": [
+      "Se mostrará una categoría o ranking.",
+      "Debes descubrir las entidades que ocupan las posiciones del Top 10.",
+      "Utiliza las pistas proporcionadas para cada puesto.",
+      "Cada respuesta correcta desbloquea más información.",
+      "Evita errores para conservar tus vidas.",
+      "Completa el ranking antes de que termine el tiempo."
+    ]
+  }
+}

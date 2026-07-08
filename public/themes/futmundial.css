@@ -1,0 +1,631 @@
+/* =========================================================
+   🌕 FUTMUNDIAL — LIGHT
+========================================================= */
+
+[data-scope="futmundial"] {
+  /* =========================
+     🎨 BASE
+  ========================= */
+
+  --primary: #d4af37;
+  --primary-dark: #9f7c1f;
+
+  /* light surfaces */
+  --secondary: #e9dfc2;
+  --secondary-light: #f4ecd7;
+
+  --accent: #f5f1e6;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --career-scroll-thumb: var(--primary);
+  --career-scroll-track: #d6ccb1;
+
+  /* =========================
+     🏆 EVENTS — PREMIUM GOLD
+  ========================= */
+
+  --event-card-bg: #d4af37;
+  --event-card-bg-2: #b88a17;
+
+  --event-card-border: #f0d57a;
+
+  --event-card-text: #ffffff;
+  --event-card-subtext: #222222;
+
+  --event-card-glow: rgba(255, 223, 120, 0.45);
+
+  --event-chip-bg: rgba(255, 255, 255, 0.18);
+  --event-chip-text: #ffffff;
+
+  --event-button-bg: #111111;
+  --event-button-text: #ffffff;
+
+  --event-button-bg-hover: #ffffff;
+  --event-button-text-hover: #111111;
+
+  --event-image-filter-base: none;
+  --event-image-filter-primary: none;
+  --event-image-filter-secondary: none;
+
+  /* =========================
+     🧱 GENERAL
+  ========================= */
+
+  --background: #f6f1df;
+  --foreground: #111111;
+  --text: var(--foreground);
+
+  --border: rgba(212, 175, 55, 0.22);
+  --ring: var(--primary);
+
+  --muted: #ece3ca;
+  --muted-foreground: #5c5648;
+
+  --input: rgba(212, 175, 55, 0.16);
+
+  --screen-bg: #111111;
+  --screen-text: var(--white);
+
+  --circle-border: var(--primary);
+  --circle-empty-bg: #cfc6ab;
+
+  /* =========================
+     🧩 PANELS
+  ========================= */
+
+  --panel-bg: #d4af37;
+
+  --panel-text: #111111;
+  --panel-title: #111111;
+
+  --panel-card-bg: #f8f4ea;
+  --panel-card-text: #111111;
+
+  --panel-card-title: #111111;
+
+  --panel-card-divider: rgba(17, 17, 17, 0.12);
+
+  /* buttons */
+  --panel-button-bg: #111111;
+  --panel-button-text: #ffffff;
+
+  --panel-button-border: transparent;
+
+  --panel-button-bg-hover: #000000;
+  --panel-button-text-hover: #ffffff;
+
+  --panel-button-disabled-bg: #d1d5db;
+  --panel-button-disabled-text: #9ca3af;
+
+  /* misc */
+  --panel-heart-active: #222;
+  --panel-heart-inactive-opacity: 0.35;
+
+  --panel-progress-bg: rgba(17, 17, 17, 0.08);
+  --panel-progress-fill: #111111;
+
+  --panel-progress-text: #111111;
+
+  --panel-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+  --panel-active-shadow: 0 0 24px rgba(212, 175, 55, 0.22);
+
+  --panel-chip-bg: rgba(17, 17, 17, 0.08);
+  --panel-chip-border: rgba(17, 17, 17, 0.08);
+  --panel-chip-text: #111111;
+
+  /* =========================
+     🏠 HOME
+  ========================= */
+
+  --home-card-bg: var(--secondary);
+  --home-card-bg-2: var(--secondary);
+
+  --home-card-text: var(--primary-dark);
+
+  --home-card-border: var(--primary);
+  --home-card-border-2: var(--primary);
+
+  --home-stat-bg: var(--primary);
+  --home-stat-bg-2: var(--primary);
+
+  --home-stat-text: var(--secondary);
+
+  --home-button-bg: var(--primary);
+  --home-button-text: var(--white);
+
+  --home-button-bg-2: var(--secondary);
+  --home-button-text-2: var(--primary-dark);
+
+  /* icons */
+  --home-image-filter-base: brightness(0) saturate(100%) invert(74%) sepia(49%)
+    saturate(496%) hue-rotate(8deg) brightness(94%) contrast(88%);
+
+  --home-image-filter-primary: brightness(0) saturate(100%) invert(74%)
+    sepia(49%) saturate(496%) hue-rotate(8deg) brightness(94%) contrast(88%);
+
+  --home-image-filter-secondary: brightness(0) saturate(100%) invert(74%)
+    sepia(49%) saturate(496%) hue-rotate(8deg) brightness(94%) contrast(88%);
+
+  /* =========================
+     🧭 NAVBAR
+  ========================= */
+
+  --navbar-bg: var(--secondary);
+  --navbar-text: #111111;
+  --navbar-border: var(--primary);
+
+  --navbar-button-bg: var(--primary);
+  --navbar-button-bg-hover: #ffffff;
+
+  --navbar-button-text: #111111;
+  --navbar-button-text-hover: #111111;
+
+  --navbar-tooltip-bg: var(--primary);
+  --navbar-tooltip-text: #111111;
+
+  --navbar-menu-bg: #ffffff;
+  --navbar-menu-border: var(--border);
+
+  --navbar-menu-item-hover-bg: var(--primary);
+  --navbar-menu-item-hover-text: #111111;
+
+  --navbar-menu-text: var(--foreground);
+  --navbar-menu-muted-text: var(--muted-foreground);
+
+  /* =========================
+     🦶 FOOTER
+  ========================= */
+
+  --footer-bg: var(--secondary);
+  --footer-text: #111111;
+
+  --footer-button-bg: var(--primary);
+  --footer-button-bg-hover: #ffffff;
+
+  --footer-button-text: #111111;
+  --footer-button-text-hover: #111111;
+
+  --footer-muted-text: #5c5648;
+  --footer-divider: rgba(17, 17, 17, 0.08);
+
+  --footer-icon-hover-text-primary: var(--primary);
+  --footer-icon-hover-text-secondary: var(--white);
+
+  --footer-social-hover-bg-primary: var(--white);
+  --footer-social-hover-bg-secondary: var(--primary);
+
+  --footer-tooltip-bg-primary: var(--white);
+  --footer-tooltip-bg-secondary: var(--primary);
+
+  --footer-tooltip-text-primary: var(--primary);
+  --footer-tooltip-text-secondary: var(--white);
+
+  /* =========================
+     🏆 RANKINGS
+  ========================= */
+
+  --rankings-bg: #f4ecd7;
+  --rankings-tabs-bg: #ece3ca;
+
+  --rankings-tab-bg: rgba(17, 17, 17, 0.05);
+  --rankings-tab-active-bg: var(--primary);
+
+  --rankings-tab-text: #111111;
+  --rankings-tab-border: rgba(212, 175, 55, 0.22);
+
+  --rankings-text-primary: #111111;
+  --rankings-text-muted: #5c5648;
+
+  --rankings-dropdown-bg: #ffffff;
+  --rankings-dropdown-text: #111111;
+
+  --rankings-dropdown-hover: #f3f4f6;
+  --rankings-dropdown-border: rgba(212, 175, 55, 0.25);
+
+  --rankings-badge-bg: var(--primary);
+  --rankings-badge-text: #111111;
+
+  --rankings-icon: var(--primary);
+
+  --rankings-period-tabs-bg: transparent;
+
+  --rankings-period-tab-bg: transparent;
+  --rankings-period-tab-active-bg: var(--primary);
+
+  --rankings-period-tab-text: #5c5648;
+  --rankings-period-tab-text-active: #111111;
+
+  --rankings-period-tab-border: rgba(212, 175, 55, 0.25);
+
+  --rankings-skeleton-bg: #e5e7eb;
+  --rankings-skeleton-highlight: #f3f4f6;
+  --rankings-skeleton-radius: 9999px;
+
+  /* =========================
+     🎮 MODE SELECTOR
+  ========================= */
+
+  --mode-title-text: #111111;
+
+  --mode-card-bg: #f5f1e6;
+  --mode-card-text: #111111;
+
+  --mode-card-border: rgba(212, 175, 55, 0.25);
+  --mode-card-hover-border: var(--primary);
+
+  --mode-card-muted-text: #6b7280;
+
+  --mode-card-active-bg: #111111;
+  --mode-card-active-border: var(--primary);
+
+  --mode-card-active-text: var(--white);
+  --mode-card-active-muted-text: #f5f1e6;
+
+  /* =========================
+     🎮 MORE OR LESS
+  ========================= */
+
+  --mol-overlay-bg: #000000;
+  --mol-overlay-opacity: 0.42;
+
+  --mol-text: #ffffff;
+  --mol-subtext: rgba(255, 255, 255, 0.85);
+
+  --mol-button-bg: var(--primary);
+  --mol-button-text: #111111;
+
+  --mol-button-bg-hover: #ebc85a;
+  --mol-button-disabled-opacity: 0.5;
+
+  --mol-pill-bg-primary: var(--primary);
+  --mol-pill-bg-secondary: #111111;
+
+  --mol-pill-text: #ffffff;
+
+  --mol-feedback-correct-bg: var(--game-feedback-correct-bg);
+  --mol-feedback-wrong-bg: var(--game-feedback-wrong-bg);
+  --mol-feedback-text: #ffffff;
+
+  /* =========================
+     🎮 CAREER
+  ========================= */
+
+  --career-timeline-card-bg: #f5f1e6;
+  --career-timeline-card-border: rgba(212, 175, 55, 0.25);
+
+  --career-timeline-card-text: #111111;
+
+  --career-timeline-number-bg: var(--primary);
+  --career-timeline-number-text: #111111;
+
+  --career-timeline-shield-border: var(--primary);
+  --career-timeline-shield-bg: #ffffff;
+
+  --career-timeline-shield-icon: var(--primary);
+
+  --career-timeline-card-highlight: rgba(212, 175, 55, 0.14);
+  --career-timeline-border-highlight: var(--primary);
+
+  --career-timeline-arrow: var(--primary);
+
+  /* =========================
+     🔍 AUTOCOMPLETE
+  ========================= */
+
+  --autocomplete-input-bg: #ffffff;
+  --autocomplete-input-text: #111111;
+
+  --autocomplete-border: rgba(212, 175, 55, 0.22);
+  --autocomplete-border-focus: var(--primary);
+
+  --autocomplete-dropdown-bg: #111111;
+  --autocomplete-dropdown-border: rgba(212, 175, 55, 0.28);
+
+  --autocomplete-item-hover-bg: var(--primary);
+
+  --autocomplete-item-text: #ffffff;
+  --autocomplete-item-secondary-text: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================================================
+   🌑 FUTMUNDIAL — DARK
+========================================================= */
+
+.dark [data-scope="futmundial"] {
+  /* =========================
+     🎨 BASE
+  ========================= */
+
+  --primary: #d4af37;
+  --primary-dark: #8a6916;
+
+  --secondary: #0f0f0f;
+  --secondary-light: #1b1b1b;
+
+  --accent: #232323;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --career-scroll-thumb: var(--primary);
+  --career-scroll-track: #2a2a2a;
+
+  /* =========================
+     🧱 GENERAL
+  ========================= */
+
+  --background: #090909;
+  --foreground: #f5f5f5;
+  --text: var(--foreground);
+
+  --border: rgba(212, 175, 55, 0.22);
+  --ring: var(--primary);
+
+  --muted: #171717;
+  --muted-foreground: #9ca3af;
+
+  --input: rgba(212, 175, 55, 0.2);
+
+  --screen-bg: #111111;
+  --screen-text: var(--white);
+
+  --circle-border: var(--primary);
+  --circle-empty-bg: #374151;
+
+  /* =========================
+     🧩 PANELS
+  ========================= */
+
+  --panel-bg: var(--secondary);
+
+  --panel-text: var(--white);
+  --panel-title: var(--primary);
+
+  --panel-card-bg: #151515;
+  --panel-card-text: var(--white);
+
+  --panel-card-title: var(--primary);
+  --panel-card-divider: var(--primary-dark);
+
+  --panel-button-bg: var(--primary);
+  --panel-button-text: #111111;
+
+  --panel-button-border: transparent;
+
+  --panel-button-bg-hover: #ebc85a;
+  --panel-button-text-hover: #000000;
+
+  --panel-button-disabled-bg: #374151;
+  --panel-button-disabled-text: #9ca3af;
+
+  --panel-heart-active: var(--primary);
+  --panel-heart-inactive-opacity: 0.35;
+
+  --panel-progress-bg: rgba(255, 255, 255, 0.12);
+  --panel-progress-fill: var(--primary);
+  --panel-progress-text: var(--white);
+
+  --panel-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+
+  --panel-active-shadow: 0 0 30px rgba(212, 175, 55, 0.28);
+
+  --panel-chip-bg: rgba(255, 255, 255, 0.08);
+  --panel-chip-border: rgba(212, 175, 55, 0.18);
+  --panel-chip-text: var(--white);
+
+  /* ========================= 
+ 🏠 HOME — DARK (FIXED)
+========================= */
+
+  --home-card-bg: var(--panel-card-bg);
+  --home-card-bg-2: var(--panel-card-bg);
+
+  --home-card-text: var(--primary);
+
+  --home-card-border: var(--primary);
+  --home-card-border-2: var(--primary);
+
+  /* stats deben ser dorado suave, no fondo sólido */
+  --home-stat-bg: var(--primary);
+  --home-stat-bg-2: var(--primary);
+
+  --home-stat-text: var(--secondary);
+
+  /* botones más consistentes con panel */
+  --home-button-bg: var(--primary);
+  --home-button-text: #111111;
+
+  --home-button-bg-2: var(--panel-card-bg);
+  --home-button-text-2: var(--foreground);
+
+  /* HOME ICON FILTERS — GOLD (más cercano a #d4af37) */
+
+  --home-image-filter-base: none;
+
+  --home-image-filter-primary: none;
+
+  --home-image-filter-secondary: brightness(0) saturate(100%) invert(74%)
+    sepia(32%) saturate(950%) hue-rotate(5deg) brightness(91%) contrast(92%);
+
+  /* =========================
+     🧭 NAVBAR
+  ========================= */
+
+  --navbar-bg: var(--secondary-light);
+  --navbar-text: var(--primary);
+
+  --navbar-button-bg: var(--primary);
+  --navbar-button-bg-hover: var(--white);
+
+  --navbar-button-text: #111111;
+  --navbar-button-text-hover: #111111;
+
+  --navbar-tooltip-bg: var(--primary);
+  --navbar-tooltip-text: #111111;
+
+  --navbar-menu-bg: #121212;
+  --navbar-menu-border: var(--border);
+
+  --navbar-menu-item-hover-bg: var(--primary);
+  --navbar-menu-item-hover-text: #111111;
+
+  --navbar-menu-text: var(--foreground);
+  --navbar-menu-muted-text: var(--muted-foreground);
+
+  /* =========================
+     🦶 FOOTER
+  ========================= */
+
+  --footer-bg: var(--secondary);
+  --footer-text: var(--primary);
+
+  --footer-button-bg: var(--primary);
+  --footer-button-bg-hover: var(--white);
+
+  --footer-button-text: #111111;
+  --footer-button-text-hover: #111111;
+
+  --footer-muted-text: #9ca3af;
+  --footer-divider: rgba(255, 255, 255, 0.06);
+
+  --footer-icon-hover-text-primary: #111111;
+  --footer-icon-hover-text-secondary: var(--primary);
+
+  --footer-social-hover-bg-primary: var(--primary);
+  --footer-social-hover-bg-secondary: var(--secondary-light);
+
+  --footer-tooltip-bg-primary: var(--primary);
+  --footer-tooltip-bg-secondary: var(--secondary-light);
+
+  --footer-tooltip-text-primary: #111111;
+  --footer-tooltip-text-secondary: var(--primary);
+
+  /* =========================
+     🏆 RANKINGS
+  ========================= */
+
+  --rankings-bg: #0f0f0f;
+  --rankings-tabs-bg: #151515;
+
+  --rankings-tab-bg: rgba(255, 255, 255, 0.05);
+  --rankings-tab-active-bg: var(--primary);
+
+  --rankings-tab-text: var(--white);
+  --rankings-tab-border: rgba(212, 175, 55, 0.2);
+
+  --rankings-text-primary: var(--foreground);
+  --rankings-text-muted: #9ca3af;
+
+  --rankings-dropdown-bg: #151515;
+  --rankings-dropdown-text: var(--foreground);
+
+  --rankings-dropdown-hover: #202020;
+  --rankings-dropdown-border: rgba(212, 175, 55, 0.2);
+
+  --rankings-badge-bg: var(--primary);
+  --rankings-badge-text: #111111;
+
+  --rankings-icon: var(--primary);
+
+  --rankings-period-tabs-bg: transparent;
+
+  --rankings-period-tab-bg: transparent;
+  --rankings-period-tab-active-bg: var(--primary);
+
+  --rankings-period-tab-text: #9ca3af;
+  --rankings-period-tab-text-active: #111111;
+
+  --rankings-period-tab-border: rgba(212, 175, 55, 0.2);
+
+  --rankings-skeleton-bg: #1f1f1f;
+  --rankings-skeleton-highlight: #2b2b2b;
+  --rankings-skeleton-radius: 9999px;
+
+  /* =========================
+     🎮 MODE SELECTOR
+  ========================= */
+
+  --mode-title-text: var(--white);
+
+  --mode-card-bg: #151515;
+  --mode-card-text: var(--foreground);
+
+  --mode-card-border: rgba(212, 175, 55, 0.18);
+  --mode-card-hover-border: var(--primary);
+
+  --mode-card-muted-text: #9ca3af;
+
+  --mode-card-active-bg: var(--primary);
+  --mode-card-active-border: var(--primary);
+
+  --mode-card-active-text: #111111;
+  --mode-card-active-muted-text: rgba(17, 17, 17, 0.75);
+
+  /* =========================
+     🎮 MORE OR LESS
+  ========================= */
+
+  --mol-overlay-bg: #000000;
+  --mol-overlay-opacity: 0.5;
+
+  --mol-text: var(--white);
+  --mol-subtext: rgba(255, 255, 255, 0.82);
+
+  --mol-button-bg: var(--primary);
+  --mol-button-text: #111111;
+
+  --mol-button-bg-hover: #ebc85a;
+  --mol-button-disabled-opacity: 0.5;
+
+  --mol-pill-bg-primary: var(--primary);
+  --mol-pill-bg-secondary: #1b1b1b;
+
+  --mol-pill-text: var(--white);
+
+  --mol-feedback-correct-bg: var(--game-feedback-correct-bg);
+  --mol-feedback-wrong-bg: var(--game-feedback-wrong-bg);
+  --mol-feedback-text: var(--white);
+
+  /* =========================
+     🎮 CAREER
+  ========================= */
+
+  --career-timeline-card-bg: #151515;
+
+  --career-timeline-card-border: rgba(212, 175, 55, 0.2);
+  --career-timeline-card-text: var(--white);
+
+  --career-timeline-number-bg: var(--primary);
+  --career-timeline-number-text: #111111;
+
+  --career-timeline-shield-border: var(--primary);
+  --career-timeline-shield-bg: #0f0f0f;
+
+  --career-timeline-shield-icon: var(--primary);
+
+  --career-timeline-card-highlight: rgba(212, 175, 55, 0.12);
+  --career-timeline-border-highlight: var(--primary);
+
+  --career-timeline-arrow: var(--primary);
+
+  /* =========================
+     🔍 AUTOCOMPLETE
+  ========================= */
+
+  --autocomplete-input-bg: #151515;
+  --autocomplete-input-text: var(--white);
+
+  --autocomplete-border: rgba(212, 175, 55, 0.2);
+  --autocomplete-border-focus: var(--primary);
+
+  --autocomplete-dropdown-bg: #0f0f0f;
+  --autocomplete-dropdown-border: rgba(212, 175, 55, 0.22);
+
+  --autocomplete-item-hover-bg: var(--primary);
+
+  --autocomplete-item-text: var(--white);
+  --autocomplete-item-secondary-text: rgba(255, 255, 255, 0.75);
+}

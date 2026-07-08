@@ -1,0 +1,80 @@
+{
+  "gameType": "grid-clubs",
+  "engine": "grid",
+  "logic": "grid",
+  "entityType": "clubs",
+  "active": true,
+  "needsContent": false,
+  "datasets": ["players"],
+
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrarreloj",
+      "type": "time",
+      "baseValue": 60,
+      "variants": [],
+      "enabled": true
+    },
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "variants": [],
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Grid de Clubes",
+    "subtitle": "Conecta jugadores entre clubes",
+    "description": "Completa el grid con jugadores que hayan jugado en ambos clubes.",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "Grid3X3",
+          "className": "w-20 h-20",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "icon",
+          "value": "Shield",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Arma tu equipo con jugadores que pasaron por San Lorenzo y jugaron en la liga indicada",
+  "rules": {
+    "time": [
+      "Jugaron en San Lorenzo",
+      "Jugaron en la liga mostrada",
+      "Sin repetir jugadores/ligas",
+      "Completa el equipo antes de que acabe el tiempo"
+    ],
+    "lives": [
+      "Jugaron en San Lorenzo",
+      "Jugaron en la liga mostrada",
+      "Sin repetir jugadores/ligas",
+      "Pierdes si te quedas sin vidas"
+    ]
+  }
+}

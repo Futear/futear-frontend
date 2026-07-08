@@ -1,0 +1,54 @@
+{
+  "gameType": "mundial",
+  "href": "/futmundial/mundial",
+  "engine": "predictor",
+  "logic": "predictor",
+
+  "active": true,
+  "needsContent": false,
+
+  "datasets": ["nationalTeams"],
+
+  "modes": [],
+
+  "flags": {
+    "allowDaily": false,
+    "allowPools": false,
+    "allowEvents": true,
+    "allowInfinite": false,
+
+    "useStreak": false,
+    "useScore": true,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Simulá tu Mundial 2026",
+    "subtitle": "Simula todo el Mundial",
+    "description": "Predice resultados, clasificados y campeón.",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "image",
+          "value": "/images/scopes/competition/futMundial/logo.webp",
+          "className": "w-28 h-28",
+          "filter": "none"
+        }
+      ]
+    }
+  },
+
+  "objective": "Predice cómo terminará el Mundial",
+
+  "rules": {
+    "default": [
+      "Completa todos los resultados",
+      "Las tablas se actualizan automáticamente",
+      "Los clasificados avanzan automáticamente",
+      "Predice el campeón del mundo"
+    ]
+  }
+}

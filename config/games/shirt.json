@@ -1,0 +1,94 @@
+{
+  "id": "shirt",
+  "gameType": "shirt",
+
+  "engine": "shirt",
+  "logic": "shirt",
+
+  "entityType": "shirt",
+
+  "active": true,
+  "content": {
+    "enabled": true,
+    "source": "manual",
+    "scopes": []
+  },
+  "datasets": [],
+
+  "modes": [
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "enabled": true
+    },
+    {
+      "key": "time",
+      "label": "Tiempo",
+      "type": "time",
+      "baseValue": 60,
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Camiseta",
+    "subtitle": "Adivina la camiseta",
+    "description": "Descubre marca, sponsors y temporadas",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "Shirt",
+          "className": "w-24 h-24",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Adivina la camiseta usando pistas visuales",
+
+  "rules": {
+    "lives": [
+      "Observa las pistas visuales",
+      "Cada error consume una vida",
+      "Descubre la camiseta completa"
+    ],
+
+    "time": [
+      "Observa las pistas visuales",
+      "Responde antes que termine el tiempo",
+      "Completa todos los pasos"
+    ]
+  },
+
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Camiseta",
+    "steps": [
+      "Se mostrará una camiseta histórica o actual.",
+      "Debes identificar año, marca o sponsor.",
+      "Tienes intentos limitados o tiempo según el modo."
+    ]
+  },
+
+  "config": {
+    "maxLives": 3,
+    "timeLimit": 180
+  }
+}

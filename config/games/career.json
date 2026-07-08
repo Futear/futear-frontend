@@ -1,0 +1,95 @@
+{
+  "gameType": "career",
+  "engine": "career",
+  "logic": "career",
+
+  "entityType": "player",
+
+  "active": true,
+  "needsContent": true,
+
+  "datasets": ["players"],
+
+  "modes": [
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "enabled": true
+    },
+    {
+      "key": "time",
+      "label": "Contrarreloj",
+      "type": "time",
+      "baseValue": 30,
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Trayectoria",
+    "subtitle": "Adivina el jugador por su trayectoria",
+    "description": "Descubre el futbolista según los clubes de su carrera profesional.",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "Repeat",
+          "className": "w-20 h-20",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "icon",
+          "value": "Shield",
+          "className": "w-20 h-20",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Adivina el jugador por su trayectoria profesional",
+
+  "rules": {
+    "time": [
+      "Tienes 30 segundos",
+      "Un club puede aparecer revelado al inicio",
+      "Cada error revela un nuevo club",
+      "Adivina antes de que acabe el tiempo"
+    ],
+
+    "lives": [
+      "Tienes 3 vidas",
+      "Un club puede aparecer revelado al inicio",
+      "Cada error revela un nuevo club",
+      "Pierdes si te quedas sin vidas"
+    ]
+  },
+
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega la Trayectoria",
+    "steps": [
+      "Se mostrarán los clubes de la carrera de un jugador.",
+      "Debes adivinar el jugador basado en su trayectoria.",
+      "Cada error revela un nuevo club como pista.",
+      "Tienes intentos limitados o vidas según el modo.",
+      "El objetivo es acertar con la menor cantidad de pistas posibles."
+    ]
+  }
+}

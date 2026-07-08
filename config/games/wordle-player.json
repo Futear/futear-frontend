@@ -1,0 +1,83 @@
+{
+  "id": "wordle-player",
+  "gameType": "wordle-player",
+  "engine": "wordle",
+  "logic": "wordle",
+
+  "entityType": "player",
+  "active": true,
+  "content": {
+    "enabled": true,
+    "source": "manual",
+    "scopes": []
+  },
+
+  "modes": [
+    {
+      "key": "attempts",
+      "label": "Normal",
+      "type": "attempts",
+      "baseValue": 6,
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Jugador del día",
+    "subtitle": "Adivina el jugador",
+    "description": "Descubre el jugador oculto en 6 intentos",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "Keyboard",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "icon",
+          "value": "PersonStanding",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Adivina el jugador del club",
+
+  "rules": {
+    "attempts": [
+      "Tienes 6 intentos máximo",
+      "Verde: letra correcta en posición correcta",
+      "Amarillo: letra correcta en posición incorrecta",
+      "Gris: letra no está en el nombre"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Jugador del Día",
+    "steps": [
+      "Debes descubrir el nombre del jugador oculto.",
+      "Tienes 6 intentos disponibles.",
+      "Las letras verdes están correctamente ubicadas.",
+      "Las amarillas pertenecen al nombre pero en otra posición.",
+      "Las grises no aparecen en la respuesta.",
+      "Usa la información obtenida en cada intento para encontrar al jugador."
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "wordle-national",
+  "gameType": "wordle-national",
+  "engine": "wordle",
+  "logic": "wordle",
+
+  "entityType": "nationalTeam",
+  "active": true,
+
+  "content": {
+    "enabled": true,
+    "source": "manual",
+    "scopes": []
+  },
+
+  "modes": [
+    {
+      "key": "attempts",
+      "label": "Normal",
+      "type": "attempts",
+      "baseValue": 6,
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Selección del día",
+    "subtitle": "Adivina la selección",
+    "description": "Descubre el país oculto en 6 intentos",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "Keyboard",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "icon",
+          "value": "Flag",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Adivina la selección oculta",
+
+  "rules": {
+    "attempts": [
+      "Tienes 6 intentos máximo",
+      "Verde: letra correcta en posición correcta",
+      "Amarillo: letra correcta en posición incorrecta",
+      "Gris: la letra no está en el nombre"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Selección del Día",
+    "steps": [
+      "Debes descubrir la selección oculta.",
+      "Dispones de 6 intentos para acertar.",
+      "Las letras verdes indican posición correcta.",
+      "Las amarillas indican que la letra existe pero está mal ubicada.",
+      "Las grises no aparecen en la respuesta.",
+      "Analiza cada intento para acercarte a la solución."
+    ]
+  }
+}

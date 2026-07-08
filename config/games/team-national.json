@@ -1,0 +1,92 @@
+{
+  "gameType": "team-national",
+  "engine": "teamBuilder",
+  "logic": "teamBuilder",
+  "entityType": "team",
+  "active": true,
+
+  "content": {
+    "enabled": true,
+    "source": "generated",
+    "scopes": ["competition"]
+  },
+
+  "datasets": [],
+
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrarreloj",
+      "type": "time",
+      "baseValue": 60,
+      "enabled": true
+    },
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Equipo de Selecciones",
+    "subtitle": "Arma el XI por selección",
+    "description": "Completa el equipo con jugadores que pasaron por el club y pertenecen al país indicado.",
+    "visual": {
+      "layout": "row",
+      "layers": [
+        {
+          "type": "image",
+          "value": "/images/formacion.png",
+          "className": "w-28 h-28",
+          "filter": "secondary"
+        },
+        {
+          "type": "icon",
+          "value": "Flag",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Arma tu equipo con jugadores del club y nacionalidad indicada",
+
+  "rules": {
+    "time": [
+      "Jugaron en el club",
+      "Tienen la nacionalidad indicada",
+      "Sin repetir jugadores/países"
+    ],
+    "lives": [
+      "Jugaron en el club",
+      "Tienen la nacionalidad indicada",
+      "Pierdes sin vidas"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Equipo de Selecciones",
+    "steps": [
+      "Cada posición combina un club con una nacionalidad.",
+      "Debes encontrar un jugador que haya jugado en ese club y tenga la nacionalidad indicada.",
+      "No puedes repetir jugadores.",
+      "Piensa en todas las épocas del club para encontrar más opciones.",
+      "Completa el equipo entero para ganar.",
+      "Hazlo antes de quedarte sin tiempo o vidas."
+    ]
+  }
+}

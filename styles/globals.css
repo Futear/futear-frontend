@@ -1,0 +1,837 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Utilidades personalizadas */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.home-card-image {
+  filter: var(--home-image-filter-base);
+}
+
+.home-card-image-primary {
+  filter: var(--home-image-filter-primary);
+}
+
+.home-card-image-secondary {
+  filter: var(--home-image-filter-secondary);
+}
+
+/* Variables base (Default Theme) */
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --primary: #10c500;
+    --primary-dark: #0a8f00;
+    --secondary: #222222;
+    --accent: #f0f0f0;
+    --white: #ffffff;
+    --black: #000000;
+
+    /* feedback */
+    --game-feedback-correct-bg: #22c55e;
+    --game-feedback-wrong-bg: #ef4444;
+    --game-feedback-text: var(--white);
+
+    /* =========================
+   🧱 COLORES GENERALES
+  ========================= */
+    --background: var(--white);
+    --foreground: var(--black);
+    --text: var(--foreground);
+
+    --border: var(--primary);
+    --ring: var(--secondary);
+
+    --muted: #f3f4f6;
+    --muted-foreground: #6b7280;
+
+    --input: var(--border);
+    --screen-bg: var(--primary);
+    --screen-text: var(--white);
+
+    --circle-border: var(--primary);
+    --circle-empty-bg: #374151;
+
+    /* =========================
+🏆 EVENTS — PREMIUM GOLD
+========================= */
+
+    --event-card-bg: #d4af37;
+    --event-card-bg-2: #b88a17;
+
+    /* borde elegante */
+    --event-card-border: #f0d57a;
+
+    /* texto */
+    --event-card-text: #fff;
+    --event-card-subtext: #222;
+
+    /* glow dorado */
+    --event-card-glow: rgba(255, 223, 120, 0.45);
+
+    /* chip translúcido premium */
+    --event-chip-bg: rgba(255, 255, 255, 0.18);
+    --event-chip-text: #ffffff;
+
+    /* buttons */
+    --event-button-bg: #111111;
+    --event-button-text: #ffffff;
+
+    --event-button-bg-hover: #ffffff;
+    --event-button-text-hover: #111111;
+
+    /* images/icons */
+    --event-image-filter-base: none;
+    --event-image-filter-primary: none;
+    --event-image-filter-secondary: none;
+
+    /* =========================
+   🧩 LAYOUT OVERRIDES
+  ========================= */
+
+    --panel-bg: var(--primary);
+    --panel-text: var(--white);
+    --panel-title: var(--white);
+
+    --panel-card-bg: var(--secondary);
+    --panel-card-text: var(--white);
+    --panel-card-title: var(--white);
+    --panel-card-divider: var(--primary);
+
+    --panel-button-bg: var(--white);
+    --panel-button-text: var(--primary);
+    --panel-button-border: transparent;
+
+    --panel-button-bg-hover: color-mix(in srgb, var(--white) 85%, black);
+    --panel-button-text-hover: var(--secondary);
+
+    --panel-button-disabled-bg: var(--gray-400);
+    --panel-button-disabled-text: var(--gray-200);
+
+    --panel-heart-active: var(--secondary);
+    --panel-heart-inactive-opacity: 0.35;
+
+    --panel-progress-bg: rgba(255, 255, 255, 0.3);
+    --panel-progress-fill: var(--white);
+    --panel-progress-text: var(--white);
+
+    /* =========================
+   🏠 HOME
+  ========================= */
+    --home-card-bg: var(--primary);
+    --home-card-bg-2: var(--secondary);
+    --home-card-text: var(--white);
+    --home-card-border: var(--secondary);
+    --home-card-border-2: var(--primary);
+
+    --home-stat-bg: var(--secondary);
+    --home-stat-bg-2: var(--primary);
+    --home-stat-text: var(--white);
+
+    --home-button-bg: var(--primary);
+    --home-button-text: var(--white);
+    --home-button-bg-2: var(--secondary);
+    --home-button-text-2: var(--white);
+
+    /* BASE */
+    --home-image-filter-base: brightness(0) invert(1); /* todas blancas */
+
+    /* DOBLES */
+    --home-image-filter-primary: brightness(0) invert(1); /* negra */
+    --home-image-filter-secondary: brightness(0) invert(1); /* blanca */
+
+    /* =========================
+   🧭 NAVBAR
+  ========================= */
+    --navbar-bg: var(--secondary);
+    --navbar-text: var(--white);
+
+    --navbar-button-bg: var(--primary);
+    --navbar-button-bg-hover: var(--white);
+    --navbar-button-text: var(--white);
+    --navbar-button-text-hover: var(--primary);
+
+    --navbar-tooltip-bg: var(--navbar-button-bg);
+    --navbar-tooltip-text: var(--navbar-text);
+
+    --navbar-menu-bg: var(--background);
+    --navbar-menu-border: var(--border);
+
+    --navbar-menu-item-hover-bg: var(--primary);
+    --navbar-menu-item-hover-text: var(--white);
+
+    --navbar-menu-text: var(--text);
+    --navbar-menu-muted-text: var(--muted-foreground);
+
+    /* =========================
+   🦶 FOOTER
+  ========================= */
+    --footer-bg: var(--black);
+    --footer-text: var(--white);
+
+    --footer-button-bg: var(--primary);
+    --footer-button-bg-hover: var(--white);
+    --footer-button-text: var(--white);
+    --footer-button-text-hover: var(--primary);
+
+    --footer-muted-text: var(--muted-foreground);
+    --footer-divider: var(--muted);
+    --footer-icon-hover-text: var(--footer-text);
+
+    --footer-social-hover-bg-primary: var(--primary);
+    --footer-social-hover-bg-secondary: var(--secondary);
+
+    --footer-tooltip-bg-primary: var(--primary);
+    --footer-tooltip-bg-secondary: var(--secondary);
+    --footer-tooltip-text-primary: var(--white);
+    --footer-tooltip-text-secondary: var(--white);
+
+    /* =========================
+   🏆 RANKINGS 
+  ========================= */
+    --rankings-podium-first-bg: #fef9c3;
+    --rankings-podium-second-bg: #f3f4f6;
+    --rankings-podium-third-bg: #fffbeb;
+
+    --rankings-icon-gold: #eab308;
+    --rankings-icon-silver: #9ca3af;
+    --rankings-icon-bronze: #d97706;
+
+    --rankings-bg: var(--primary);
+    --rankings-tabs-bg: var(--primary);
+
+    --rankings-tab-bg: var(--background);
+    --rankings-tab-active-bg: var(--secondary);
+    --rankings-tab-text: var(--white);
+    --rankings-tab-border: var(--border);
+
+    /* TEXTO */
+    --rankings-text-primary: var(--foreground);
+    --rankings-text-muted: var(--muted-foreground);
+
+    /* DROPDOWN*/
+    --rankings-dropdown-bg: var(--background);
+    --rankings-dropdown-text: var(--foreground);
+    --rankings-dropdown-hover: var(--accent);
+    --rankings-dropdown-border: var(--border);
+
+    /* BADGES*/
+    --rankings-badge-bg: var(--primary);
+    --rankings-badge-text: var(--white);
+
+    /* ICONOS */
+    --rankings-icon: var(--white);
+
+    /* PERIOD TABS */
+    --rankings-period-tabs-bg: var(--rankings-tabs-bg);
+    --rankings-period-tab-bg: transparent;
+    --rankings-period-tab-active-bg: var(--rankings-tab-active-bg);
+
+    --rankings-period-tab-text: var(--rankings-text-muted);
+    --rankings-period-tab-text-active: var(--rankings-text-primary);
+    --rankings-period-tab-border: var(--rankings-tab-border);
+
+    /* SKELETON */
+    --rankings-skeleton-bg: var(--muted);
+    --rankings-skeleton-highlight: var(--accent);
+    --rankings-skeleton-radius: 9999px;
+
+    /* =========================
+🎮 GAME MODE SELECTOR
+========================= */
+    --mode-title-text: var(--white);
+
+    --mode-card-bg: var(--background);
+    --mode-card-text: var(--muted-foreground);
+    --mode-card-border: var(--border);
+
+    --mode-card-hover-border: var(--secondary);
+
+    --mode-card-muted-text: var(--muted-foreground);
+
+    /* seleccionado */
+    --mode-card-active-bg: var(--secondary);
+    --mode-card-active-border: var(--secondary);
+    --mode-card-active-text: var(--primary);
+    --mode-card-active-muted-text: rgba(255, 255, 255, 0.9);
+
+    /* =========================
+🎮 MORE OR LESS GAME
+========================= */
+
+    /* overlay sobre imágenes */
+    --mol-overlay-bg: var(--primary);
+    --mol-overlay-opacity: 0.4;
+
+    /* texto general */
+    --mol-text: var(--white);
+    --mol-subtext: rgba(255, 255, 255, 0.9);
+
+    /* botones */
+    --mol-button-bg: var(--primary);
+    --mol-button-text: var(--white);
+    --mol-button-bg-hover: var(--secondary);
+    --mol-button-disabled-opacity: 0.5;
+
+    /* score & timer pills */
+    --mol-pill-bg-primary: var(--primary);
+    --mol-pill-bg-secondary: var(--secondary);
+    --mol-pill-text: var(--white);
+
+    /* feedback */
+    --mol-feedback-correct-bg: var(--game-feedback-correct-bg);
+    --mol-feedback-wrong-bg: var(--game-feedback-wrong-bg);
+    --mol-feedback-text: var(--white);
+
+    /* =========================
+🎮 CAREER GAME
+========================= */
+    --career-timeline-card-bg: var(--secondary);
+    --career-timeline-card-border: var(--primary);
+    --career-timeline-card-text: var(--white);
+
+    --career-timeline-number-bg: var(--primary);
+    --career-timeline-number-text: var(--white);
+
+    --career-timeline-shield-border: var(--primary);
+    --career-timeline-shield-bg: var(--background);
+    --career-timeline-shield-icon: var(--primary);
+
+    --career-timeline-club-highlight: var(--primary);
+    --career-timeline-arrow: var(--primary);
+
+    /* Autocomplete */
+    --autocomplete-input-bg: var(--white);
+    --autocomplete-input-text: var(--black);
+    --autocomplete-border: rgba(0, 0, 0, 0.2);
+    --autocomplete-border-focus: var(--primary);
+    --autocomplete-dropdown-bg: var(--primary);
+    --autocomplete-dropdown-border: var(--secondary);
+    --autocomplete-item-hover-bg: var(--secondary);
+    --autocomplete-item-text: var(--white);
+    --autocomplete-item-secondary-text: rgba(255, 255, 255, 0.9);
+
+    /* =========================
+🎮 TEAM GAME
+========================= */
+    /* campo de fútbol */
+    --team-field-bg: #22c55e;
+    --team-field-border: var(--white);
+    --team-field-line: var(--white);
+    --team-field-line-opacity: 0.7;
+
+    /* posiciones de jugadores */
+    --team-player-empty-bg: #e5e7eb;
+    --team-player-empty-border: #d1d5db;
+    --team-player-empty-text: #6b7280;
+
+    /* grid de wordle */
+    --player-grid-correct-bg: #22c55e;
+    --player-grid-correct-border: #22c55e;
+    --player-grid-present-bg: #eab308;
+    --player-grid-present-border: #eab308;
+    --player-grid-absent-bg: #6b7280;
+    --player-grid-absent-border: #6b7280;
+    --player-grid-empty-bg: var(--white);
+    --player-grid-empty-border: #d1d5db;
+    --player-grid-text: var(--white);
+
+    --player-grid-current-bg: var(--white);
+    --player-grid-current-border: #4b5563;
+    --player-grid-current-text: var(--black);
+
+    /* teclado */
+    --player-keyboard-correct-bg: #22c55e;
+    --player-keyboard-present-bg: #eab308;
+    --player-keyboard-absent-bg: #6b7280;
+    --player-keyboard-unused-bg: #e5e7eb;
+    --player-keyboard-unused-text: var(--black);
+    --player-keyboard-text: var(--white);
+  }
+
+  .dark {
+    --primary: #10c500;
+    --primary-dark: #0b2a18;
+    --secondary: #222222;
+    --accent: #f0f0f0;
+    --white: #ffffff;
+    --black: #000000;
+
+    /* =========================
+    🧱 COLORES GENERALES
+    ========================= */
+    --background: #111;
+    --foreground: #e5e7eb;
+    --text: var(--foreground);
+
+    --border: var(--secondary);
+    --ring: var(--primary);
+
+    --muted: #111827;
+    --muted-foreground: #9ca3af;
+
+    --input: var(--border);
+
+    --circle-border: var(--secondary);
+    --circle-empty-bg: #374151;
+    /* =========================
+   🧩 LAYOUT OVERRIDES
+  ========================= */
+    --screen-bg: var(--secondary);
+    --screen-text: var(--white);
+
+    --panel-bg: var(--secondary);
+    --panel-title: var(--white);
+    --panel-text: var(--white);
+
+    --panel-card-bg: var(--primary);
+    --panel-card-title: var(--white);
+    --panel-card-text: var(--white);
+    --panel-card-divider: var(--secondary);
+
+    --panel-button-bg: var(--white);
+    --panel-button-text: var(--secondary);
+    --panel-button-border: transparent;
+
+    --panel-button-bg-hover: color-mix(in srgb, var(--white) 85%, black);
+    --panel-button-text-hover: var(--secondary);
+    --panel-button-disabled-bg: var(--gray-400);
+    --panel-button-disabled-text: var(--gray-200);
+
+    --panel-heart-active: var(--primary);
+    --panel-heart-inactive-opacity: 0.35;
+
+    --panel-progress-bg: rgba(255, 255, 255, 0.3);
+    --panel-progress-fill: var(--white);
+    --panel-progress-text: var(--white);
+
+    /* =========================
+   🏠 HOME
+  ========================= */
+    --home-card-bg: var(--secondary);
+    --home-card-bg-2: var(--primary);
+    --home-card-text: var(--white);
+    --home-card-border: var(--primary);
+    --home-card-border-2: var(--secondary);
+
+    --home-stat-bg: var(--primary);
+    --home-stat-bg-2: var(--secondary);
+    --home-stat-text: var(--white);
+
+    --home-button-bg: var(--secondary);
+    --home-button-text: var(--white);
+    --home-button-bg-2: var(--primary);
+    --home-button-text-2: var(--white);
+
+    /* BASE */
+    --home-image-filter-base: brightness(0) invert(1); /* todas blancas */
+
+    /* DOBLES */
+    --home-image-filter-primary: none; /* negra */
+    --home-image-filter-secondary: brightness(0) invert(1); /* blanca */
+
+    /* =========================
+   🧭 NAVBAR
+  ========================= */
+    --navbar-bg: var(--primary);
+    --navbar-text: var(--white);
+
+    --navbar-button-bg: var(--secondary);
+    --navbar-button-bg-hover: var(--white);
+    --navbar-button-text: var(--white);
+    --navbar-button-text-hover: var(--secondary);
+
+    --navbar-tooltip-bg: var(--navbar-button-bg);
+    --navbar-tooltip-text: var(--navbar-text);
+
+    --navbar-menu-bg: var(--background);
+    --navbar-menu-border: var(--border);
+
+    --navbar-menu-item-hover-bg: var(--secondary);
+    --navbar-menu-item-hover-text: var(--white);
+
+    --navbar-menu-text: var(--foreground);
+    --navbar-menu-muted-text: var(--muted-foreground);
+
+    /* =========================
+   🦶 FOOTER
+  ========================= */
+    --footer-bg: var(--black);
+    --footer-text: var(--white);
+
+    --footer-button-bg: var(--secondary);
+    --footer-button-bg-hover: var(--white);
+    --footer-button-text: var(--white);
+    --footer-button-text-hover: var(--secondary);
+
+    --footer-muted-text: var(--muted-foreground);
+    --footer-divider: var(--muted);
+    --footer-icon-hover-text: var(--footer-text);
+
+    --footer-social-hover-bg-primary: var(--primary);
+    --footer-social-hover-bg-secondary: var(--secondary);
+
+    --footer-tooltip-bg-primary: var(--primary);
+    --footer-tooltip-bg-secondary: var(--secondary);
+    --footer-tooltip-text-primary: var(--white);
+    --footer-tooltip-text-secondary: var(--white);
+
+    /* =========================
+   🏆 RANKINGS
+  ========================= */
+    --rankings-bg: var(--secondary);
+    --rankings-tabs-bg: var(--secondary);
+
+    --rankings-tab-bg: transparent;
+    --rankings-tab-active-bg: var(--primary);
+    --rankings-tab-text: var(--white);
+    --rankings-tab-border: var(--border);
+
+    /* TEXTO */
+    --rankings-text-primary: var(--foreground);
+    --rankings-text-muted: var(--muted-foreground);
+
+    /* DROPDOWN */
+    --rankings-dropdown-bg: #0b172a;
+    --rankings-dropdown-text: var(--foreground);
+    --rankings-dropdown-hover: #10223f;
+    --rankings-dropdown-border: var(--border);
+
+    /* BADGES */
+    --rankings-badge-bg: var(--secondary);
+    --rankings-badge-text: var(--white);
+
+    /* PERIOD TABS */
+    --rankings-period-tabs-bg: var(--rankings-tabs-bg);
+    --rankings-period-tab-bg: transparent;
+    --rankings-period-tab-active-bg: var(--secondary);
+
+    --rankings-period-tab-text: var(--rankings-text-muted);
+    --rankings-period-tab-text-active: var(--rankings-text-primary);
+    --rankings-period-tab-border: var(--rankings-tab-border);
+
+    /* SKELETON */
+    --rankings-skeleton-bg: #1f2933;
+    --rankings-skeleton-highlight: #334155;
+    --rankings-skeleton-radius: 9999px;
+
+    /* =========================
+🎮 GAME MODE SELECTOR
+========================= */
+    --mode-title-text: var(--white);
+
+    --mode-card-bg: var(--background);
+    --mode-card-text: var(--muted-foreground);
+    --mode-card-border: var(--border);
+
+    --mode-card-hover-border: var(--primary);
+
+    /* texto secundario */
+    --mode-card-muted-text: var(--muted-foreground);
+
+    /* seleccionado */
+    --mode-card-active-bg: var(--primary);
+    --mode-card-active-border: var(--primary);
+    --mode-card-active-text: var(--secondary);
+    --mode-card-active-muted-text: rgba(255, 255, 255, 0.9);
+
+    /* =========================
+🎮 MORE OR LESS GAME
+========================= */
+
+    /* overlay sobre imágenes */
+    --mol-overlay-bg: var(--secondary);
+    --mol-overlay-opacity: 0.4;
+
+    /* texto general */
+    --mol-text: var(--white);
+    --mol-subtext: rgba(255, 255, 255, 0.9);
+
+    /* botones */
+    --mol-button-bg: var(--secondary);
+    --mol-button-text: var(--white);
+    --mol-button-bg-hover: var(--primary);
+    --mol-button-disabled-opacity: 0.5;
+
+    /* score & timer pills */
+    --mol-pill-bg-primary: var(--secondary);
+    --mol-pill-bg-secondary: var(--primary);
+    --mol-pill-text: var(--white);
+
+    /* feedback */
+    --mol-feedback-correct-bg: var(--game-feedback-correct-bg);
+    --mol-feedback-wrong-bg: var(--game-feedback-wrong-bg);
+    --mol-feedback-text: var(--white);
+
+    /* =========================
+🎮 CAREER GAME (DARK)
+========================= */
+    --career-timeline-card-bg: var(--primary);
+    --career-timeline-card-border: var(--secondary);
+    --career-timeline-card-text: var(--white);
+
+    --career-timeline-number-bg: var(--white);
+    --career-timeline-number-text: var(--background);
+
+    --career-timeline-shield-border: var(--secondary);
+    --career-timeline-shield-bg: var(--background);
+    --career-timeline-shield-icon: var(--primary);
+
+    --career-timeline-club-highlight: var(--secondary);
+    --career-timeline-arrow: var(--white);
+
+    /* Autocomplete */
+    --autocomplete-input-bg: var(--white);
+    --autocomplete-input-text: var(--black);
+    --autocomplete-border: rgba(255, 255, 255, 0.2);
+    --autocomplete-border-focus: var(--secondary);
+    --autocomplete-dropdown-bg: var(--secondary);
+    --autocomplete-dropdown-border: var(--primary);
+    --autocomplete-item-hover-bg: var(--primary);
+    --autocomplete-item-text: var(--white);
+    --autocomplete-item-secondary-text: rgba(255, 255, 255, 0.9);
+
+    /* =========================
+🎮 TOP GAME
+========================= */
+    --top-row-bg: var(--secondary);
+    --top-row-revealed-bg: var(--primary);
+    --top-row-border: var(--primary);
+    --top-row-revealed-border: var(--primary);
+    --top-image-bg: var(--background);
+    --top-image-border: var(--background);
+    --top-text: var(--white);
+    --top-stat-text: var(--white);
+    --top-hint-bg: var(--secondary);
+    --top-hint-border: var(--primary);
+    --top-hint-icon: var(--white);
+    --top-hint-text: var(--white);
+
+    /* =========================
+🎮 TEAM GAME
+========================= */
+
+    /* posiciones de jugadores */
+    --team-player-empty-bg: #374151;
+    --team-player-empty-border: #4b5563;
+    --team-player-empty-text: #9ca3af;
+
+    --player-grid-empty-bg: #1f2937;
+    --player-grid-empty-border: #4b5563;
+    --player-grid-current-bg: #374151;
+    --player-grid-current-text: var(--white);
+
+    --player-keyboard-unused-bg: #374151;
+    --player-keyboard-unused-text: var(--white);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Estilo base del input tipo range */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+/* Para navegadores WebKit (Chrome, Safari) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: var(--rojo);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  margin-top: -11px; /* Ajustar según altura de barra */
+}
+
+/* Para Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: var(--rojo);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Opcional: Cambiar estilo del track (la barra completa) */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: transparent;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: transparent;
+}
+
+.dark input[type="range"]::-webkit-slider-thumb {
+  background: var(--azul);
+}
+
+/* Para Firefox */
+.dark input[type="range"]::-moz-range-thumb {
+  background: var(--azul);
+}
+/* Bloquear scroll del body cuando modal está abierto */
+.modal-open {
+  overflow: hidden;
+}
+
+/* Scroll interno para pantallas grandes */
+.internal-scroll {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+/* Scroll del modal para pantallas pequeñas */
+.modal-scroll {
+  overflow-y: auto;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-bottom: 30px;
+}
+
+/* Scrollbars, sliders, etc. */
+input[type="range"]::-webkit-slider-thumb {
+  background: var(--primary);
+}
+input[type="range"]::-moz-range-thumb {
+  background: var(--primary);
+}
+.dark input[type="range"]::-webkit-slider-thumb {
+  background: var(--primary-dark);
+}
+.dark input[type="range"]::-moz-range-thumb {
+  background: var(--primary-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--primary-dark);
+}
+
+/* Google auto ads */
+.google-auto-placed {
+  display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+}
+
+/* =============================
+   AUTOCOMPLETE SCROLLBAR
+============================= */
+
+.autocomplete-scroll {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--autocomplete-scroll-thumb) transparent;
+}
+
+/* Chrome, Edge, Safari */
+.autocomplete-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.autocomplete-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 999px;
+}
+
+.autocomplete-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--autocomplete-scroll-thumb);
+  border-radius: 999px;
+  border: 2px solid transparent; /* padding effect */
+  background-clip: content-box;
+}
+
+.autocomplete-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: var(--autocomplete-scroll-thumb-hover);
+}
+
+:root {
+  --autocomplete-scroll-thumb: rgba(255, 255, 255, 0.35);
+  --autocomplete-scroll-thumb-hover: rgba(255, 255, 255, 0.55);
+}
+
+/* =========================
+   CAREER TIMELINE SCROLL
+========================= */
+
+.career-scroll {
+  scrollbar-width: 32px;
+  scrollbar-color: var(--career-scroll-thumb) var(--career-scroll-track);
+}
+
+.career-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.career-scroll::-webkit-scrollbar-track {
+  background: var(--career-scroll-track);
+  border-radius: 999px;
+}
+
+.career-scroll::-webkit-scrollbar-thumb {
+  background: var(--career-scroll-thumb);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background 0.2s ease;
+}
+
+.career-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--career-scroll-thumb-hover);
+}
+
+.career-scroll::-webkit-scrollbar-corner {
+  background: transparent;
+}

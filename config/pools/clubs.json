@@ -1,0 +1,24 @@
+{
+  "slug": "clubs",
+  "name": "Clubes",
+  "description": "Pool de rotación para los scopes de clubes",
+  "games": [
+    "wordle-player",
+    "career",
+    "shirt",
+    "top",
+    "connections",
+    "video",
+    "history"
+  ],
+  "editable": true,
+  "active": true,
+  "rotation": {
+    "mode": "sequential",
+    "startDate": "2026-02-16",
+    "gamesPerDay": 1,
+    "excludedDays": [],
+    "avoidRepeats": true,
+    "wrap": true
+  }
+}

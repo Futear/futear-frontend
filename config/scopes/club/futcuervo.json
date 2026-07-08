@@ -1,0 +1,87 @@
+{
+  "_id": "69680dce247a6c820343bd24",
+  "name": "FutCuervo",
+  "slug": "futcuervo",
+  "context": "club",
+  "entityId": "68429af7587b60bfbe49342b",
+  "entityModel": "Club",
+  "enabled": false,
+  "visibility": "public",
+
+  "identity": {
+    "fanBase": "San Lorenzo",
+    "nickname": "FutCuervo",
+    "slogan": "FutCuervo",
+    "federation": {
+      "name": "AFA",
+      "slug": "afa",
+      "logo": "/images/federations/afa.svg"
+    }
+  },
+  "branding": {
+    "logo": "/images/scopes/club/futcuervo/logo.png",
+    "shield": "/images/scopes/club/futcuervo/shield.webp",
+    "favicon": "/images/scopes/club/futcuervo/logo.png"
+  },
+  "scheduler": {
+    "events": [
+      {
+        "gameType": "mundial",
+        "order": 1
+      }
+    ],
+    "fixedGames": [
+      {
+        "gameType": "career",
+        "order": 1
+      },
+      {
+        "gameType": "more-or-less-goals",
+        "order": 2
+      },
+      {
+        "gameType": "more-or-less-matches",
+        "order": 3
+      },
+      {
+        "gameType": "team-league",
+        "order": 4
+      },
+      {
+        "gameType": "team-local",
+        "order": 5
+      },
+      {
+        "gameType": "team-country",
+        "order": 6
+      },
+      {
+        "gameType": "grid-clubs",
+        "order": 7
+      },
+      {
+        "gameType": "grid-leagues",
+        "order": 8
+      },
+      {
+        "gameType": "grid-mixed",
+        "order": 9
+      },
+      {
+        "gameType": "top",
+        "order": 10
+      },
+      {
+        "gameType": "team-elite",
+        "order": 11
+      }
+    ],
+    "rotating": {
+      "enabled": true,
+      "poolId": "clubs",
+      "gamesPerDay": 1,
+      "startDate": "",
+      "excludedDays": []
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "gameType": "team-league",
+  "engine": "teamBuilder",
+  "logic": "teamBuilder",
+  "entityType": "team",
+  "active": true,
+  "needsContent": false,
+  "datasets": ["players", "coaches"],
+
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrarreloj",
+      "type": "time",
+      "baseValue": 60,
+      "variants": [],
+      "enabled": true
+    },
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "variants": [],
+      "enabled": true
+    }
+  ],
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": false,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+  "presentation": {
+    "title": "Equipo de Ligas",
+    "subtitle": "Arma el XI ideal por liga",
+    "description": "Completa el equipo con jugadores que pasaron por San Lorenzo y jugaron en la liga indicada.",
+    "visual": {
+      "layout": "row",
+      "layers": [
+        {
+          "type": "image",
+          "value": "/images/formacion.png",
+          "className": "w-28 h-28",
+          "filter": "secondary"
+        },
+        {
+          "type": "icon",
+          "value": "Trophy",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+  "objective": "Arma tu equipo con jugadores que pasaron por San Lorenzo y jugaron en la liga indicada",
+  "rules": {
+    "time": [
+      "Jugaron en San Lorenzo",
+      "Jugaron en la liga mostrada",
+      "Sin repetir jugadores/ligas",
+      "Completa el equipo antes de que acabe el tiempo"
+    ],
+    "lives": [
+      "Jugaron en San Lorenzo",
+      "Jugaron en la liga mostrada",
+      "Sin repetir jugadores/ligas",
+      "Pierdes si te quedas sin vidas"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Equipo de Ligas",
+    "steps": [
+      "Cada posición muestra una liga diferente.",
+      "Debes encontrar un jugador que haya pasado por San Lorenzo y jugado en esa liga.",
+      "Un mismo jugador solo puede utilizarse una vez.",
+      "Analiza cuidadosamente cada liga mostrada.",
+      "Completa las once posiciones correctamente.",
+      "Hazlo antes de que termine el tiempo o pierdas tus vidas."
+    ]
+  }
+}

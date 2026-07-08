@@ -1,0 +1,61 @@
+{
+  "gameType": "grid-mixed",
+  "engine": "grid",
+  "logic": "grid",
+  "entityType": "mixed",
+  "active": true,
+  "needsContent": false,
+  "datasets": ["players"],
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrarreloj",
+      "type": "time",
+      "baseValue": 90,
+      "variants": [],
+      "enabled": true
+    },
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "variants": [],
+      "enabled": true
+    }
+  ],
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": true,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+  "presentation": {
+    "title": "Grid Mixto",
+    "subtitle": "Combina clubes, ligas y posiciones",
+    "description": "Completa el grid con jugadores que cumplan ambas condiciones.",
+
+    "visual": {
+      "layout": "row",
+
+      "layers": [
+        {
+          "type": "icon",
+          "value": "Grid3X3",
+          "className": "w-20 h-20",
+          "filter": "secondary"
+        },
+
+        {
+          "type": "icon",
+          "value": "Shuffle",
+          "className": "w-16 h-16",
+          "filter": "secondary"
+        }
+      ]
+    }
+  }
+}

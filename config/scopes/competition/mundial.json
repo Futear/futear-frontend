@@ -1,0 +1,86 @@
+{
+  "_id": "69680dce247a6c820343bd25",
+  "name": "FutMundial",
+  "slug": "futmundial",
+  "context": "competition",
+  "entityId": "68429af7587b60bfbe49342c",
+  "entityModel": "Competition",
+  "enabled": true,
+  "visibility": "public",
+
+  "identity": {
+    "fanBase": "los Mundiales",
+    "nickname": "FutMundial",
+    "slogan": "Toda la historia de los Mundiales",
+    "federation": {
+      "name": "FIFA",
+      "slug": "fifa",
+      "logo": "/images/federations/fifa.svg"
+    }
+  },
+
+  "branding": {
+    "logo": "/images/scopes/competition/futmundial/logo.webp",
+    "shield": "/images/scopes/competition/futmundial/logo.webp",
+    "icons": {
+      "favicon": "/images/scopes/competition/futmundial/favicon.ico",
+      "favicon16": "/images/scopes/competition/futmundial/favicon-16x16.png",
+      "favicon32": "/images/scopes/competition/futmundial/favicon-32x32.png",
+      "apple": "/images/scopes/competition/futmundial/apple-touch-icon.png",
+      "icon192": "/images/scopes/competition/futmundial/android-chrome-192x192.png",
+      "icon512": "/images/scopes/competition/futmundial/android-chrome-512x512.png",
+      "manifest": "/images/scopes/competition/futmundial/site.webmanifest"
+    }
+  },
+
+  "scheduler": {
+    "events": [
+      {
+        "gameType": "mundial",
+        "order": 1
+      }
+    ],
+    "fixedGames": [
+      {
+        "gameType": "team-worldcup-clubs",
+        "order": 1
+      },
+      {
+        "gameType": "team-national",
+        "order": 2
+      },
+      {
+        "gameType": "shirt-mundial",
+        "order": 4
+      },
+      {
+        "gameType": "shirt",
+        "order": 5
+      },
+      {
+        "gameType": "wordle-player",
+        "order": 7
+      },
+      {
+        "gameType": "wordle-national",
+        "order": 7
+      },
+      {
+        "gameType": "more-or-less-matches",
+        "order": 10
+      },
+      {
+        "gameType": "more-or-less-goals",
+        "order": 11
+      }
+    ],
+
+    "rotating": {
+      "enabled": true,
+      "poolId": "clubs",
+      "gamesPerDay": 1,
+      "startDate": "",
+      "excludedDays": []
+    }
+  }
+}

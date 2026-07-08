@@ -1,0 +1,95 @@
+{
+  "gameType": "team-elite",
+  "engine": "teamBuilder",
+  "logic": "teamBuilder",
+  "entityType": "team",
+  "active": true,
+  "content": {
+    "enabled": true,
+    "source": "generated",
+    "scopes": ["global"]
+  },
+
+  "datasets": [],
+
+  "modes": [
+    {
+      "key": "time",
+      "label": "Contrarreloj",
+      "type": "time",
+      "baseValue": 60,
+      "variants": [],
+      "enabled": true
+    },
+    {
+      "key": "lives",
+      "label": "Vidas",
+      "type": "lives",
+      "baseValue": 3,
+      "variants": [],
+      "enabled": true
+    }
+  ],
+
+  "flags": {
+    "allowDaily": true,
+    "allowPools": true,
+    "allowEvents": true,
+    "allowInfinite": true,
+    "useStreak": true,
+    "useScore": false,
+    "trackStats": true
+  },
+
+  "presentation": {
+    "title": "Equipo de Elite",
+    "subtitle": "Arma el XI con clubes del mundo",
+    "description": "Completa el equipo con jugadores que hayan jugado en los clubes indicados. Sin límites de ligas o países.",
+    "visual": {
+      "layout": "row",
+      "layers": [
+        {
+          "type": "image",
+          "value": "/images/formacion.png",
+          "className": "w-28 h-28",
+          "filter": "secondary"
+        },
+        {
+          "type": "icon",
+          "value": "Gem",
+          "className": "w-14 h-14",
+          "filter": "secondary"
+        }
+      ]
+    }
+  },
+
+  "objective": "Arma tu equipo con jugadores que hayan jugado en el club indicado en cada posición",
+
+  "rules": {
+    "time": [
+      "El jugador debe haber jugado en el club mostrado",
+      "Sin repetir jugadores ni clubes",
+      "Puedes usar jugadores de cualquier liga o país",
+      "Completa el equipo antes de que acabe el tiempo"
+    ],
+    "lives": [
+      "El jugador debe haber jugado en el club mostrado",
+      "Sin repetir jugadores ni clubes",
+      "Puedes usar jugadores de cualquier liga o país",
+      "Pierdes si te quedas sin vidas"
+    ]
+  },
+  "guide": {
+    "enabled": true,
+    "title": "Cómo se juega Equipo de Elite",
+    "steps": [
+      "Completa las once posiciones del equipo.",
+      "Cada casilla muestra un club específico.",
+      "Debes ingresar un jugador que haya jugado en ese club.",
+      "Puedes utilizar futbolistas de cualquier época.",
+      "No se permiten repeticiones.",
+      "Completa el XI antes de quedarte sin tiempo o vidas."
+    ]
+  }
+}
