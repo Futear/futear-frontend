@@ -148,11 +148,17 @@ export default function RootLayout({ children }) {
 
       <body className="min-h-screen flex flex-col bg-[var(--background)] text-[var(--text)]">
         <GameProgressHydrator />
+
         {children}
+
         <GoogleAdsScript />
-        <GoogleAnalytics gaId="G-E9SZ8KQRSE" />
+
         {process.env.NODE_ENV === "production" && <Analytics />}
+
         {process.env.NODE_ENV === "development" && <DebugDatePanel />}
+
+        <GoogleAnalytics gaId="G-E9SZ8KQRSE" />
+
         {/* </AudioProvider> */}
       </body>
     </html>

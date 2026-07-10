@@ -1,9 +1,11 @@
 "use client";
+
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 
 export function GoogleAdsScript() {
   const pathname = usePathname();
+
   const excludePaths = [
     "/admin",
     "/auth",
@@ -20,10 +22,12 @@ export function GoogleAdsScript() {
 
   return (
     <Script
+      id="google-adsense"
+      key="google-adsense"
+      strategy="afterInteractive"
       async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6984459691312607"
       crossOrigin="anonymous"
-      strategy="lazyOnload"
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6984459691312607"
     />
   );
 }
