@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 // import { generateThemeCSS } from "@/lib/themes/generateThemeCSS";
 
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import { GoogleAdsScript } from "@/components/GoogleAdsScript";
 import GameProgressHydrator from "@/components/providers/GameProgressHydrator";
@@ -149,6 +150,7 @@ export default function RootLayout({ children }) {
         <GameProgressHydrator />
         {children}
         <GoogleAdsScript />
+        <GoogleAnalytics gaId="G-E9SZ8KQRSE" />
         {process.env.NODE_ENV === "production" && <Analytics />}
         {process.env.NODE_ENV === "development" && <DebugDatePanel />}
         {/* </AudioProvider> */}
