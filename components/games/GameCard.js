@@ -98,6 +98,7 @@ export function GameCard({ game, index, scope, scopeSlug }) {
     <div className="relative">
       <Link
         href={href}
+        prefetch={false}
         className="
           relative group aspect-square rounded-2xl p-5
           flex flex-col justify-between

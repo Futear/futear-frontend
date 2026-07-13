@@ -6,16 +6,17 @@ export default function Navbar({
   title = "Futear",
   logo = "/images/logo.png",
   homeUrl = "/",
+  priority = false,
 }) {
   return (
     <nav className="w-full h-[56px] md:h-[64px] px-6 flex items-center justify-between fixed z-50 bg-[var(--navbar-bg)] text-[var(--navbar-text)]">
-      <Link href={homeUrl} className="flex items-center gap-3">
+      <Link href={homeUrl} prefetch={false} className="flex items-center gap-3">
         <Image
           src={logo}
           alt={title}
           width={48}
           height={48}
-          priority
+          priority={priority}
           style={{ width: "auto", height: "48px" }}
         />
 

@@ -157,7 +157,7 @@ export default function RootLayout({ children }) {
 
         {process.env.NODE_ENV === "development" && <DebugDatePanel />}
 
-        <GoogleAnalytics gaId="G-E9SZ8KQRSE" />
+        <GoogleAnalytics gaId="G-KZXFLMEH9V" />
 
         {/* </AudioProvider> */}
       </body>

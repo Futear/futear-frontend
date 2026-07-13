@@ -8,21 +8,19 @@ import {
   UserPlus,
   User,
   LogOut,
-  UserCog,
   BookOpen,
-  Music,
-  ImageIcon,
   CircleUserRound,
 } from "lucide-react";
 import DarkModeButton from "@/components/layout/DarkModeButton";
-import { useUserStore } from "@/stores/userStore";
+// import { useUserStore } from "@/stores/userStore";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
-  const user = useUserStore((state) => state.user);
-  const clearUser = useUserStore((state) => state.clearUser);
+  // const user = useUserStore((state) => state.user);
+  // const clearUser = useUserStore((state) => state.clearUser);
+  const user = null; // Placeholder for user state
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -144,6 +142,7 @@ text-[var(--navbar-menu-text)]
             {/* Navegación */}
             <Link
               href="/guide"
+              prefetch={false}
               className="flex items-center gap-3 px-4 py-2 rounded-md hover:bg-[var(--navbar-menu-item-hover-bg)]
 hover:text-[var(--navbar-menu-item-hover-text)]
 "
@@ -197,15 +196,16 @@ hover:text-[var(--navbar-menu-item-hover-text)]
               </>
             ) : (
               <>
-                <Link
+                {/* <Link
                   href="/profile"
+                  prefetch={false}
                   className="flex items-center gap-3 px-4 py-2 rounded-md hover:bg-[var(--navbar-menu-item-hover-bg)]
 hover:text-[var(--navbar-menu-item-hover-text)]
 "
                   onClick={() => setIsOpen(false)}
                 >
                   <User size={16} /> Mi Perfil
-                </Link>
+                </Link> */}
 
                 <button
                   onClick={handleLogout}

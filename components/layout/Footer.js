@@ -84,6 +84,7 @@ function Footer({
             {/* LOGO + TITLE */}
             <Link
               href={homeUrl}
+              prefetch={false}
               className="flex items-center gap-3 cursor-pointer max-sm:mb-10"
             >
               <div className="w-10 h-10 rounded-lg flex items-center justify-center">
@@ -178,6 +179,7 @@ function Footer({
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
             <Link
               href="/about"
+              prefetch={false}
               className="text-[var(--footer-muted-text)] hover:text-[var(--footer-text)]"
             >
               Sobre Nosotros
@@ -185,6 +187,7 @@ function Footer({
 
             <Link
               href="/privacy-policy"
+              prefetch={false}
               className="text-[var(--footer-muted-text)] hover:text-[var(--footer-text)]"
             >
               Política de Privacidad
@@ -192,6 +195,7 @@ function Footer({
 
             <Link
               href="/terms"
+              prefetch={false}
               className="text-[var(--footer-muted-text)] hover:text-[var(--footer-text)]"
             >
               Términos y Condiciones
@@ -199,6 +203,7 @@ function Footer({
 
             <Link
               href="/cookies"
+              prefetch={false}
               className="text-[var(--footer-muted-text)] hover:text-[var(--footer-text)]"
             >
               Política de Cookies
@@ -206,6 +211,7 @@ function Footer({
 
             <Link
               href="/contact"
+              prefetch={false}
               className="text-[var(--footer-muted-text)] hover:text-[var(--footer-text)]"
             >
               Contáctanos

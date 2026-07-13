@@ -34,6 +34,7 @@ const ScopeCard = memo(function ScopeCard({ scope, close }) {
   return (
     <Link
       href={`/${scope.slug}`}
+      prefetch={false}
       onClick={close}
       className="
         group

@@ -4,6 +4,8 @@ import { EventGridServer } from "@/components/games/EventGridServer";
 
 import { HomeHeader } from "./HomeHeader";
 
+import HomeSeoContent from "./HomeSeoContent";
+
 import { getPublicScopesLight } from "@/lib/getPublicScopesLight";
 
 // import { getScopeContents } from "@/lib/getScopeContents";
@@ -52,6 +54,8 @@ export async function HomePage({ scope, scopeSlug, scopeId, context, games }) {
             </div>
           </div>
         )}
+
+        <HomeSeoContent />
       </main>
     </div>
   );

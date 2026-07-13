@@ -23,12 +23,7 @@
     }
   },
   "scheduler": {
-    "events": [
-      {
-        "gameType": "mundial",
-        "order": 1
-      }
-    ],
+    "events": [],
     "fixedGames": [
       {
         "gameType": "wordle-club",

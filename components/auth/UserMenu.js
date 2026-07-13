@@ -7,7 +7,6 @@ import {
   LogIn,
   UserPlus,
   LogOut,
-  UserCog,
   BookOpen,
   CircleUserRound,
 } from "lucide-react";
@@ -17,11 +16,12 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useUserStore } from "@/stores/userStore";
+// import { useUserStore } from "@/stores/userStore";
 
 export default function UserMenu() {
-  const user = useUserStore((s) => s.user);
-  const clearUser = useUserStore((state) => state.clearUser);
+  // const user = useUserStore((s) => s.user);
+  // const clearUser = useUserStore((state) => state.clearUser);
+  const user = null; // Placeholder for user state
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -112,6 +112,7 @@ text-[var(--navbar-menu-text)]
               <>
                 <Link
                   href="/guide"
+                  prefetch={false}
                   className="flex w-full px-4 py-2 items-center gap-3 rounded-md transition-colors hover:bg-[var(--navbar-menu-item-hover-bg)]
 hover:text-[var(--navbar-menu-item-hover-text)]
 "
@@ -148,6 +149,7 @@ hover:text-[var(--navbar-menu-item-hover-text)]
 
                 <Link
                   href="/guide"
+                  prefetch={false}
                   className="flex w-full px-4 py-2 items-center gap-3 rounded-md transition-colors hover:bg-[var(--navbar-menu-item-hover-bg)]
 hover:text-[var(--navbar-menu-item-hover-text)]
 "
@@ -156,8 +158,9 @@ hover:text-[var(--navbar-menu-item-hover-text)]
                   <BookOpen size={16} />
                   Guía de reglas
                 </Link>
-                <Link
+                {/* <Link
                   href="/profile"
+                  prefetch={false}
                   className="flex w-full px-4 py-2 items-center gap-3 rounded-md transition-colors hover:bg-[var(--navbar-menu-item-hover-bg)]
 hover:text-[var(--navbar-menu-item-hover-text)]
 "
@@ -165,8 +168,7 @@ hover:text-[var(--navbar-menu-item-hover-text)]
                 >
                   <User size={16} />
                   Mi Perfil
-                </Link>
-
+                </Link> */}
                 <div className="border-t my-2 border-[var(--navbar-menu-border)]" />
 
                 <button

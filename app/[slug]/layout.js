@@ -123,6 +123,7 @@ export default function ScopeLayout({ children, params }) {
           className="bg-[var(--background)] min-h-screen text-[var(--text)]"
         >
           <Navbar
+            priority
             title={scope.name}
             logo={scope.branding?.logo || scope.branding?.shield}
             homeUrl={`/${scope.slug}`}

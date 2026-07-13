@@ -24,12 +24,7 @@
     "favicon": "/images/scopes/club/futcuervo/logo.png"
   },
   "scheduler": {
-    "events": [
-      {
-        "gameType": "mundial",
-        "order": 1
-      }
-    ],
+    "events": [],
     "fixedGames": [
       {
         "gameType": "career",

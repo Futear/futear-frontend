@@ -221,6 +221,7 @@ export default function RegisterForm() {
         <p className="text-center text-xs mt-4 text-[var(--gris)]">
           ¿Ya tienes una cuenta?{" "}
           <Link
+            prefetch={false}
             href="/auth/login"
             className="font-medium text-[var(--primary)] dark:text-[var(--secondary)]"
           >

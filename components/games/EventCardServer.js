@@ -15,6 +15,7 @@ export function EventCardServer({ game, scope, scopeSlug }) {
   return (
     <Link
       href={href}
+      prefetch={false}
       className="
         relative overflow-hidden
         rounded-3xl

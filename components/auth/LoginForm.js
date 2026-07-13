@@ -31,7 +31,7 @@ export default function LoginForm() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
           credentials: "include", // 🔑 cookies httpOnly
-        }
+        },
       );
 
       const data = await res.json();
@@ -133,6 +133,7 @@ export default function LoginForm() {
 
         <div className="flex justify-end text-xs">
           <Link
+            prefetch={false}
             href="/auth/forgot-password"
             className="transition-colors duration-200 ease-out text-[var(--primary)] dark:text-[var(--secondary)]"
           >
@@ -197,6 +198,7 @@ export default function LoginForm() {
         >
           ¿No tienes una cuenta?{" "}
           <Link
+            prefetch={false}
             href="/auth/register"
             className="font-medium text-[var(--primary)] dark:text-[var(--secondary)]"
           >

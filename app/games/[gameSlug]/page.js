@@ -103,7 +103,7 @@ export default async function GlobalGamePage({ params }) {
     name: gameDefinition.presentation?.title,
     description: gameDefinition.presentation?.description,
     genre: "Sports",
-    url: `https://futcuervo.com/games/${gameSlug}`,
+    url: `https://futear.app/games/${gameSlug}`,
   };
 
   return (

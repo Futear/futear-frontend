@@ -87,7 +87,7 @@ export default function GameGuidePage() {
                 </ol>
 
                 <div className="text-center mt-8">
-                  <Link href={game.link}>
+                  <Link prefetch={false} href={game.link}>
                     <button
                       className="
                         bg-white

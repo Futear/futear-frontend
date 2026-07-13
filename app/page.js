@@ -15,7 +15,7 @@ export default function GlobalHomePage() {
   return (
     <>
       <div className="min-h-screen flex flex-col">
-        <Navbar />
+        <Navbar priority />
 
         <HomePage
           scope={globalScope}

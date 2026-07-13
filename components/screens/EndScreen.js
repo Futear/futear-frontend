@@ -73,6 +73,7 @@ export default function EndScreen({
           {/* BUTTON */}
           <Link
             href={homeUrl}
+            prefetch={false}
             className="flex items-center justify-center
               mt-3 sm:mt-6
               w-full
