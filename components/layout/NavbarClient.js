@@ -1,17 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
-const UserButton = dynamic(() => import("@/components/auth/UserMenu"), {
-  ssr: false,
-});
-const DarkModeButton = dynamic(() => import("./DarkModeButton"), {
-  ssr: false,
-});
-const CafecitoButton = dynamic(() => import("./CafecitoButton"), {
-  ssr: false,
-});
-const MobileMenu = dynamic(() => import("./MobileMenu"), { ssr: false });
+import UserButton from "@/components/auth/UserMenu";
+import DarkModeButton from "./DarkModeButton";
+import CafecitoButton from "./CafecitoButton";
+import MobileMenu from "./MobileMenu";
 
 export default function NavbarClient() {
   return (

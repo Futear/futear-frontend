@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useMemo } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   User,
@@ -24,10 +24,10 @@ export default function UserMenu() {
   const user = null; // Placeholder for user state
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef(null);
-  const buttonRef = useRef(null);
 
-  const handleUserClick = () => setIsMenuOpen(!isMenuOpen);
+  const handleUserClick = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   const API_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -48,27 +48,21 @@ export default function UserMenu() {
     window.location.href = "/";
   };
 
-  const userIcon = useMemo(() => {
-    if (!user) {
-      return <User size={20} />;
-    }
-
-    if (user.image) {
-      return (
-        <img
-          src={user.image}
-          alt={user.name || "Usuario"}
-          className="w-7 h-7 rounded-full object-cover"
-          width={28}
-          height={28}
-          loading="lazy"
-          decoding="async"
-        />
-      );
-    }
-
-    return <CircleUserRound size={22} />;
-  }, [user]);
+  const userIcon = !user ? (
+    <User size={20} />
+  ) : user.image ? (
+    <img
+      src={user.image}
+      alt={user.name || "Usuario"}
+      className="w-7 h-7 rounded-full object-cover"
+      width={28}
+      height={28}
+      loading="lazy"
+      decoding="async"
+    />
+  ) : (
+    <CircleUserRound size={22} />
+  );
 
   return (
     <div className="relative">
@@ -76,10 +70,10 @@ export default function UserMenu() {
         <Tooltip>
           <TooltipTrigger asChild>
             <button
-              ref={buttonRef}
               onClick={handleUserClick}
-              className="h-9 w-9 min-w-[36px] min-h-[36px] max-w-[36px] max-h-[36px] flex items-center justify-center rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg outline-none focu-s:outline-none border-none bg-[var(--navbar-button-bg)] text-[var(--navbar-button-text)] hover:bg-[var(--navbar-button-bg-hover)] hover:text-[var(--navbar-button-text-hover)]"
+              className="h-9 w-9 min-w-[36px] min-h-[36px] max-w-[36px] max-h-[36px] flex items-center justify-center rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg outline-none focus:outline-none border-none bg-[var(--navbar-button-bg)] text-[var(--navbar-button-text)] hover:bg-[var(--navbar-button-bg-hover)] hover:text-[var(--navbar-button-text-hover)]"
               aria-label="User menu"
+              type="button"
             >
               <div className="relative flex items-center justify-center">
                 {userIcon}
@@ -87,12 +81,13 @@ export default function UserMenu() {
               </div>
             </button>
           </TooltipTrigger>
+
           <TooltipContent
             className="
-    bg-[var(--navbar-tooltip-bg)]
-    text-[var(--navbar-tooltip-text)]
-    border-0
-  "
+              bg-[var(--navbar-tooltip-bg)]
+              text-[var(--navbar-tooltip-text)]
+              border-0
+            "
           >
             {user ? user.name : "Iniciar Sesión"}
           </TooltipContent>
@@ -101,11 +96,12 @@ export default function UserMenu() {
 
       {isMenuOpen && (
         <div
-          ref={menuRef}
-          className="absolute right-0 top-full mt-2 w-48 rounded-lg shadow-lg border-2 z-50 px-2 border-[var(--navbar-menu-border)]
-bg-[var(--navbar-menu-bg)]
-text-[var(--navbar-menu-text)]
-"
+          className="
+            absolute right-0 top-full mt-2 w-48 rounded-lg shadow-lg border-2 z-50 px-2
+            border-[var(--navbar-menu-border)]
+            bg-[var(--navbar-menu-bg)]
+            text-[var(--navbar-menu-text)]
+          "
         >
           <div className="py-2">
             {!user ? (
@@ -113,14 +109,17 @@ text-[var(--navbar-menu-text)]
                 <Link
                   href="/guide"
                   prefetch={false}
-                  className="flex w-full px-4 py-2 items-center gap-3 rounded-md transition-colors hover:bg-[var(--navbar-menu-item-hover-bg)]
-hover:text-[var(--navbar-menu-item-hover-text)]
-"
                   onClick={() => setIsMenuOpen(false)}
+                  className="
+                    flex w-full px-4 py-2 items-center gap-3 rounded-md transition-colors
+                    hover:bg-[var(--navbar-menu-item-hover-bg)]
+                    hover:text-[var(--navbar-menu-item-hover-text)]
+                  "
                 >
                   <BookOpen size={16} />
                   Guía de reglas
                 </Link>
+
                 <div className="flex w-full px-4 py-2 items-center justify-between rounded-md opacity-50 select-none">
                   <div className="flex items-center gap-3">
                     <LogIn size={16} />
@@ -139,10 +138,8 @@ hover:text-[var(--navbar-menu-item-hover-text)]
               <>
                 <div className="px-4 py-2 border-b mb-2 border-[var(--navbar-menu-border)]">
                   <p className="font-medium">{user.name}</p>
-                  <p
-                    className="text-xs truncate text-[var(--navbar-menu-muted-text)]
-"
-                  >
+
+                  <p className="text-xs truncate text-[var(--navbar-menu-muted-text)]">
                     {user.email}
                   </p>
                 </div>
@@ -150,32 +147,43 @@ hover:text-[var(--navbar-menu-item-hover-text)]
                 <Link
                   href="/guide"
                   prefetch={false}
-                  className="flex w-full px-4 py-2 items-center gap-3 rounded-md transition-colors hover:bg-[var(--navbar-menu-item-hover-bg)]
-hover:text-[var(--navbar-menu-item-hover-text)]
-"
                   onClick={() => setIsMenuOpen(false)}
+                  className="
+                    flex w-full px-4 py-2 items-center gap-3 rounded-md transition-colors
+                    hover:bg-[var(--navbar-menu-item-hover-bg)]
+                    hover:text-[var(--navbar-menu-item-hover-text)]
+                  "
                 >
                   <BookOpen size={16} />
                   Guía de reglas
                 </Link>
-                {/* <Link
+
+                {/*
+                <Link
                   href="/profile"
                   prefetch={false}
-                  className="flex w-full px-4 py-2 items-center gap-3 rounded-md transition-colors hover:bg-[var(--navbar-menu-item-hover-bg)]
-hover:text-[var(--navbar-menu-item-hover-text)]
-"
                   onClick={() => setIsMenuOpen(false)}
+                  className="
+                    flex w-full px-4 py-2 items-center gap-3 rounded-md transition-colors
+                    hover:bg-[var(--navbar-menu-item-hover-bg)]
+                    hover:text-[var(--navbar-menu-item-hover-text)]
+                  "
                 >
                   <User size={16} />
                   Mi Perfil
-                </Link> */}
+                </Link>
+                */}
+
                 <div className="border-t my-2 border-[var(--navbar-menu-border)]" />
 
                 <button
                   onClick={handleLogoutClick}
-                  className="flex w-full px-4 py-2 items-center gap-3 rounded-md transition-colors hover:bg-[var(--navbar-menu-item-hover-bg)]
-hover:text-[var(--navbar-menu-item-hover-text)]
-"
+                  type="button"
+                  className="
+                    flex w-full px-4 py-2 items-center gap-3 rounded-md transition-colors
+                    hover:bg-[var(--navbar-menu-item-hover-bg)]
+                    hover:text-[var(--navbar-menu-item-hover-text)]
+                  "
                 >
                   <LogOut size={16} />
                   Cerrar Sesión

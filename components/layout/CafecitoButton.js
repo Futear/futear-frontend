@@ -18,7 +18,7 @@ export default function CafecitoCustom() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Invitame un café en Cafecito"
-            className="p-2 rounded-lg transition-colors transition-transform duration-300 transform hover:scale-105 hover:shadow-lg outline-none focus:outline-none border-none bg-[var(--navbar-button-bg)] text-[var(--navbar-button-text)] hover:bg-[var(--navbar-button-bg-hover)] hover:text-[var(--navbar-button-text-hover)]"
+            className="p-2 rounded-lg transition duration-300 transform hover:scale-105 hover:shadow-lg outline-none focus:outline-none border-none bg-[var(--navbar-button-bg)] text-[var(--navbar-button-text)] hover:bg-[var(--navbar-button-bg-hover)] hover:text-[var(--navbar-button-text-hover)]"
           >
             <FaCoffee size={20} />
           </a>

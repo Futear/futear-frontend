@@ -1,6 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
 import ThemeLoader from "@/components/theme/ThemeLoader";
-import { ScopeProvider } from "@/components/scope/ScopeContext";
 import { getScopeBySlug } from "@/lib/getScopes";
 
 export const dynamicParams = false;
@@ -115,23 +114,21 @@ export default function ScopeLayout({ children, params }) {
 
   return (
     <>
+      {" "}
       <ThemeLoader slug={scope.slug} />
+      <div
+        data-scope={scope.slug}
+        className="bg-[var(--background)] min-h-screen text-[var(--text)]"
+      >
+        <Navbar
+          priority
+          title={scope.name}
+          logo={scope.branding?.logo || scope.branding?.shield}
+          homeUrl={`/${scope.slug}`}
+        />
 
-      <ScopeProvider value={scope}>
-        <div
-          data-scope={scope.slug}
-          className="bg-[var(--background)] min-h-screen text-[var(--text)]"
-        >
-          <Navbar
-            priority
-            title={scope.name}
-            logo={scope.branding?.logo || scope.branding?.shield}
-            homeUrl={`/${scope.slug}`}
-          />
-
-          {children}
-        </div>
-      </ScopeProvider>
+        {children}
+      </div>
     </>
   );
 }

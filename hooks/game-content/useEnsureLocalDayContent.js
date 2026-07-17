@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 import { useGameContentStore } from "@/stores/gameContentStore";
 import { getLocalDayKey } from "@/lib/date/dayKey";
@@ -10,12 +10,16 @@ import { resolveRotatingGame } from "@/lib/rotation/resolveRotatingGame";
 const CONTENT_WORKER_URL =
   "https://content-cache-worker.lucadev-arg.workers.dev";
 
+const RETRY_AFTER = 60 * 60 * 1000; // 1 hora
+
 export function useEnsureLocalDayContent({
   scopeKey,
   context,
   scopeId,
   games,
 }) {
+  const loadingRef = useRef(false);
+
   const hydrated = useGameContentStore((s) => s.hydrated);
 
   const scopeContents = useGameContentStore(
@@ -24,9 +28,15 @@ export function useEnsureLocalDayContent({
 
   const isLoading = useGameContentStore((s) => s.loadingScopes?.[scopeKey]);
 
+  const errorScope = useGameContentStore((s) => s.errorScopes?.[scopeKey]);
+
   const setLoadingScope = useGameContentStore((s) => s.setLoadingScope);
 
   const setScopeContents = useGameContentStore((s) => s.setScopeContents);
+
+  const setErrorScope = useGameContentStore((s) => s.setErrorScope);
+
+  const clearErrorScope = useGameContentStore((s) => s.clearErrorScope);
 
   const contentGames = useMemo(() => {
     return games
@@ -67,13 +77,21 @@ export function useEnsureLocalDayContent({
       return;
     }
 
-    if (isLoading) {
+    if (isLoading || loadingRef.current) {
       return;
     }
 
-    // let cancelled = false;
+    if (
+      errorScope &&
+      errorScope.day === localDay &&
+      Date.now() < errorScope.retryAt
+    ) {
+      return;
+    }
 
     const load = async () => {
+      loadingRef.current = true;
+
       try {
         setLoadingScope(scopeKey, true);
 
@@ -86,56 +104,42 @@ export function useEnsureLocalDayContent({
         if (context !== "global" && scopeId) {
           params.append("scopeId", scopeId);
         }
-        console.log("CONTENT GAMES", contentGames);
-        console.log("FETCH START");
 
         const res = await fetch(
           `${CONTENT_WORKER_URL}/api/game-contents/batch?${params}`,
         );
 
         if (!res.ok) {
-          console.log("FETCH ERROR", res.status);
+          setErrorScope(scopeKey, {
+            day: localDay,
+            retryAt: Date.now() + RETRY_AFTER,
+          });
 
           return;
         }
 
-        console.log("FETCH OK");
-
         const data = await res.json();
-
-        console.log("JSON OK", data);
-
-        // if (cancelled) {
-        //   console.log("CANCELLED");
-
-        //   return;
-        // }
-
-        console.log("SET CONTENTS", scopeKey, Object.keys(data?.data || {}));
 
         setScopeContents(scopeKey, {
           version: localDay,
           data: data?.data || {},
         });
 
-        console.log(
-          "STORE AFTER SET",
-          useGameContentStore.getState().contentsByScope,
-        );
+        clearErrorScope(scopeKey);
       } catch (err) {
         console.error("[useEnsureLocalDayContent]", err);
-      } finally {
-        console.log("SET LOADING FALSE");
 
+        setErrorScope(scopeKey, {
+          day: localDay,
+          retryAt: Date.now() + RETRY_AFTER,
+        });
+      } finally {
+        loadingRef.current = false;
         setLoadingScope(scopeKey, false);
       }
     };
 
     load();
-
-    // return () => {
-    //   cancelled = true;
-    // };
   }, [
     hydrated,
     scopeKey,
@@ -144,7 +148,10 @@ export function useEnsureLocalDayContent({
     contentGames,
     scopeContents?.version,
     isLoading,
+    errorScope,
     setLoadingScope,
     setScopeContents,
+    setErrorScope,
+    clearErrorScope,
   ]);
 }

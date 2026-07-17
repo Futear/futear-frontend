@@ -18,6 +18,8 @@ export const useGameContentStore = create(
 
       loadingScopes: {},
 
+      errorScopes: {},
+
       setLoadingScope: (scopeKey, value) =>
         set((state) => ({
           loadingScopes: {
@@ -25,6 +27,27 @@ export const useGameContentStore = create(
             [scopeKey]: value,
           },
         })),
+
+      setErrorScope: (scopeKey, value) =>
+        set((state) => ({
+          errorScopes: {
+            ...state.errorScopes,
+            [scopeKey]: value,
+          },
+        })),
+
+      clearErrorScope: (scopeKey) =>
+        set((state) => {
+          const errorScopes = {
+            ...state.errorScopes,
+          };
+
+          delete errorScopes[scopeKey];
+
+          return {
+            errorScopes,
+          };
+        }),
 
       setScopeContents: (scopeKey, payload) =>
         set((state) => ({

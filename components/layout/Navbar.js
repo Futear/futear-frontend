@@ -17,7 +17,11 @@ export default function Navbar({
           width={48}
           height={48}
           priority={priority}
-          style={{ width: "auto", height: "48px" }}
+          unoptimized
+          style={{
+            width: "auto",
+            height: "48px",
+          }}
         />
 
         <span className="hidden sm:block font-black uppercase">{title}</span>
