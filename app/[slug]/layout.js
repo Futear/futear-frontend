@@ -114,7 +114,6 @@ export default function ScopeLayout({ children, params }) {
 
   return (
     <>
-      {" "}
       <ThemeLoader slug={scope.slug} />
       <div
         data-scope={scope.slug}

@@ -13,13 +13,13 @@
     "logo": "/images/scopes/global/logo.webp",
     "shield": "/images/scopes/global/logo.webp",
     "icons": {
-      "favicon": "/images/scopes/global/favicon.ico",
-      "favicon16": "/images/scopes/global/favicon-16x16.png",
-      "favicon32": "/images/scopes/global/favicon-32x32.png",
-      "apple": "/images/scopes/global/apple-touch-icon.png",
-      "icon192": "/images/scopes/global/android-chrome-192x192.png",
-      "icon512": "/images/scopes/global/android-chrome-512x512.png",
-      "manifest": "/images/scopes/global/site.webmanifest"
+      "favicon": "/favicon.ico",
+      "favicon16": "/favicon-16x16.png",
+      "favicon32": "/favicon-32x32.png",
+      "apple": "/apple-touch-icon.png",
+      "icon192": "/android-chrome-192x192.png",
+      "icon512": "/android-chrome-512x512.png",
+      "manifest": "/site.webmanifest"
     }
   },
   "scheduler": {

@@ -1,6 +1,4 @@
 import "@/styles/globals.css";
-// import { getTheme } from "@/lib/getTheme";
-// import { generateThemeCSS } from "@/lib/themes/generateThemeCSS";
 
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -10,17 +8,13 @@ import GameProgressHydrator from "@/components/providers/GameProgressHydrator";
 import DebugDatePanel from "@/components/dev/DebugDatePanel";
 import { getScopeBySlug } from "@/lib/getScopes";
 
+// import { getTheme } from "@/lib/getTheme";
+// import { generateThemeCSS } from "@/lib/themes/generateThemeCSS";
 // import AudioProvider from "@/components/audio/providers/AudioProvider";
 
-/* =========================================================
-   METADATA
-========================================================= */
+const SITE_URL = "https://futear.app";
 
 const globalScope = getScopeBySlug("global");
-
-const globalIcons = globalScope?.branding?.icons ?? {};
-
-const SITE_URL = "https://futear.app";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -33,46 +27,31 @@ export const metadata = {
   description:
     "Juegos, trivias y desafíos sobre fútbol, camisetas, jugadores, clubes, ligas y Mundiales.",
 
-  manifest: globalIcons.manifest,
+  manifest: "/site.webmanifest",
 
   icons: {
     icon: [
       {
-        url: globalIcons.favicon,
+        url: "/favicon.ico",
       },
       {
-        url: globalIcons.favicon16,
+        url: "/favicon-16x16.png",
         sizes: "16x16",
         type: "image/png",
       },
       {
-        url: globalIcons.favicon32,
+        url: "/favicon-32x32.png",
         sizes: "32x32",
         type: "image/png",
       },
     ],
 
+    shortcut: "/favicon.ico",
+
     apple: [
       {
-        url: globalIcons.apple,
+        url: "/apple-touch-icon.png",
         sizes: "180x180",
-      },
-    ],
-
-    shortcut: [globalIcons.favicon],
-
-    other: [
-      {
-        rel: "icon",
-        url: globalIcons.icon192,
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        rel: "icon",
-        url: globalIcons.icon512,
-        sizes: "512x512",
-        type: "image/png",
       },
     ],
   },
@@ -93,7 +72,7 @@ export const metadata = {
 
     images: [
       {
-        url: `${SITE_URL}${globalScope?.branding?.logo}`,
+        url: `${SITE_URL}${globalScope.branding.logo}`,
         width: 1200,
         height: 1200,
         alt: "Futear",
@@ -109,13 +88,9 @@ export const metadata = {
     description:
       "Juegos, trivias y desafíos sobre fútbol, camisetas, jugadores, clubes, ligas y Mundiales.",
 
-    images: [`${SITE_URL}${globalScope?.branding?.logo}`],
+    images: [`${SITE_URL}${globalScope.branding.logo}`],
   },
 };
-
-/* =========================================================
-   ROOT LAYOUT
-========================================================= */
 
 export default function RootLayout({ children }) {
   const jsonLd = {
@@ -158,8 +133,6 @@ export default function RootLayout({ children }) {
         {process.env.NODE_ENV === "development" && <DebugDatePanel />}
 
         <GoogleAnalytics gaId="G-KZXFLMEH9V" />
-
-        {/* </AudioProvider> */}
       </body>
     </html>
   );
